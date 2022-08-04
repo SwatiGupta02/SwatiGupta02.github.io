@@ -109,6 +109,7 @@ input[type="radio"] {
 }
 
 .continue-button{
+  margin-bottom: 20%;
   width: 100%;
 }
 
@@ -163,8 +164,8 @@ button{
 }
 
 .modal-content-container{
-  height: 20rem;
-  width: 25rem;
+  height: 70%;
+  width: 70%;
   background-color: rgb(43, 42, 42);
   display: flex;
   flex-direction: column;
@@ -181,12 +182,13 @@ button{
 }
 
 .grade-details{
-  width: 15rem;
-  height: 10rem;
+  width: 50%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top:10%;
 }
 
 .grade-details p{
@@ -206,7 +208,9 @@ button{
 	font-size:16px;
 	color: white;
 	align-items: center;
+  column-width: 0.5rem;
 }
+
 
 .modal-button-container button{
   width: 10rem;
