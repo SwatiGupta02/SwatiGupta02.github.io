@@ -353,7 +353,6 @@ function unCheckRadioButtons() {
 function handleEndGame() {
     let remark = null
     let remarkColor = null
-
     // condition check for player remark and remark color
     if (playerScore <= 3) {
         remark = "Bad Grades, Keep Practicing."
@@ -376,7 +375,12 @@ function handleEndGame() {
     document.getElementById('wrong-answers').innerHTML = wrongAttempt
     document.getElementById('right-answers').innerHTML = playerScore
     document.getElementById('score-modal').style.display = "flex"
-    document.getElementById('timer').innerHTML = timer_array;
+    var wrapper = document.getElementById('timer');
+    var myHTML = '';
+    for(var i = 0; i < 10; i++){
+        myHTML += '<tr><td>' + (i+1) + '</td><td>' + timer_array[i] + '</td></tr><br>';
+    }
+    wrapper.innerHTML = myHTML;
 
 }
 
