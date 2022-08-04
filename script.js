@@ -440,8 +440,383 @@ const questions = [
 		"optionC": "Cricket",
 		"optionD": "Hockey",
 		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Amrit Diwan Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Chadha Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Divan Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Ibrahim Rahimatillah Challenger Cup belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Lady Ratan Tata Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Maharaja Ranjit Singh Gold Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Narang Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Thomas Cup belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Tunku Abdul-Rahman Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Uber Cup (Women) belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Davis Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Grand Prix belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Jaylaxmi Cup (Women's) belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Rajendra Prasad Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Lawn Tenis",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Rajkumar Cup (Junior boys) belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Rajkumari Cup (Junior girls) belongs to ?",
+		"optionA": "Lawn Tenis",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Ramanujan Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Thant Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Travancore Cup (Women's) belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Wightman Cup belongs to ?",
+		"optionA": "Lawn Tenis",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Wimbledon Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Lawn Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Corbillion Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Table Tenis",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Corbitton Cup (Women) belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Table Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Jaylaxmi Cup (Women's) belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Table Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Rajkumar Cup (Junior boys) belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Table Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Rajkumari Challenge Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Table Tenis",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Ramanujan Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Table Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Swaythling Cup (Men) belongs to ?",
+		"optionA": "Table Tenis",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Table Tennis Grand Prix belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Table Tenis",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Travancore Cup (Women's) belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Table Tenis",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Maharaj Prithi Singh Baria Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Polo",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Prithi Singh Cup belongs to ?",
+		"optionA": "Polo",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Radha Mohan Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Polo",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Westchester Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Polo",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Colombo Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Golf",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Eisenhower Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Golf",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Prince of Wales Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Golf",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Ryder Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Golf",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Walker Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Golf",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Bangalore Cup belongs to ?",
+		"optionA": "Basket Ball",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Todd Memorial Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Basket Ball",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Williams Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Basket Ball",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Burdwan Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Weight Lifting",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Best Service in Sportsman belongs to ?",
+		"optionA": "Air Racing",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Jaswant Singh belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Air Racing",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Jawaharlal Challenge belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Air Racing",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "Which sports the tropy Nehru Trophy Boat Race belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Boat Racing(Kerala)",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionB"
 	}
-]
 ]
 let shuffledQuestions = [] //empty array to hold shuffled selected questions out of all available questions
 
