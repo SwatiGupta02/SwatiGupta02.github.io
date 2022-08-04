@@ -1,13 +1,13 @@
 let timer_array = [];
 const game = {timer:null,start:null,end:null};
-const questions =[
+const questions = [
 	{
 		"question": "How many days makes a week ?",
 		"optionA": "7 days",
 		"optionB": "10 days",
 		"optionC": "14 days",
 		"optionD": "5 days",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "How many players are allowed on a soccer pitch ?",
@@ -15,7 +15,7 @@ const questions =[
 		"optionB": "10 players",
 		"optionC": "11 players",
 		"optionD": "9 players",
-		"correctOption": "optionB"
+		"correctOption": "optionC"
 	},
 	{
 		"question": "Who was the first President of USA ?",
@@ -23,7 +23,7 @@ const questions =[
 		"optionB": "Donald Trump",
 		"optionC": "Barack Obama",
 		"optionD": "Abraham Lincoln",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "30 days has ______ ?",
@@ -31,7 +31,7 @@ const questions =[
 		"optionB": "January",
 		"optionC": "December",
 		"optionD": "June",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How manay hours can be found in a day ?",
@@ -39,7 +39,7 @@ const questions =[
 		"optionB": "30 hours",
 		"optionC": "38 hours",
 		"optionD": "48 hours",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Which is the longest river in the world ?",
@@ -47,7 +47,7 @@ const questions =[
 		"optionB": "River Nile",
 		"optionC": "Long River",
 		"optionD": "River Niger",
-		"correctOption": "optionA"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "_____ is the hottest Continent on Earth ?",
@@ -55,7 +55,7 @@ const questions =[
 		"optionB": "Oceania",
 		"optionC": "Antarctica",
 		"optionD": "Africa",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Which country is the largest in the world ?",
@@ -63,7 +63,7 @@ const questions =[
 		"optionB": "Russia",
 		"optionC": "Canada",
 		"optionD": "Africa",
-		"correctOption": "optionA"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Which of these numbers is an odd number ?",
@@ -71,7 +71,7 @@ const questions =[
 		"optionB": "Ten",
 		"optionC": "Twelve",
 		"optionD": "Eight",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "`\"You Can't see me is a popular saying by`",
@@ -79,7 +79,7 @@ const questions =[
 		"optionB": "Eminem",
 		"optionC": "Bill Gates",
 		"optionD": "Chris Brown",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Where is the world tallest building located ?",
@@ -87,7 +87,7 @@ const questions =[
 		"optionB": "Africa",
 		"optionC": "California",
 		"optionD": "Dubai",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "The longest river in the United Kingdom is ?",
@@ -95,7 +95,7 @@ const questions =[
 		"optionB": "River Severn",
 		"optionC": "River Mersey",
 		"optionD": "River Trent",
-		"correctOption": "optionA"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How many permanent teeth does a dog have ?",
@@ -103,7 +103,7 @@ const questions =[
 		"optionB": "38",
 		"optionC": "42",
 		"optionD": "40",
-		"correctOption": "optionB"
+		"correctOption": "optionC"
 	},
 	{
 		"question": "Which national team won the football World cup in 2018 ?",
@@ -111,7 +111,7 @@ const questions =[
 		"optionB": "England",
 		"optionC": "Brazil",
 		"optionD": "Germany",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Which US state was Donald Trump Born ?",
@@ -119,7 +119,7 @@ const questions =[
 		"optionB": "New York",
 		"optionC": "California",
 		"optionD": "New Jersey",
-		"correctOption": "optionA"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How man states does Nigeria have ?",
@@ -127,7 +127,7 @@ const questions =[
 		"optionB": "24",
 		"optionC": "30",
 		"optionD": "36",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "____ is the capital of Nigeria ?",
@@ -135,7 +135,7 @@ const questions =[
 		"optionB": "Abuja",
 		"optionC": "Lagos",
 		"optionD": "Calabar",
-		"correctOption": "optionA"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Los Angeles is also known as ?",
@@ -143,7 +143,7 @@ const questions =[
 		"optionB": "Angels City",
 		"optionC": "Shining city",
 		"optionD": "City of Angels",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "What is the capital of Germany ?",
@@ -151,7 +151,7 @@ const questions =[
 		"optionB": "Georgia",
 		"optionC": "Missouri",
 		"optionD": "Oklahoma",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "How many sides does an hexagon have ?",
@@ -159,7 +159,7 @@ const questions =[
 		"optionB": "Six",
 		"optionC": "Sevene",
 		"optionD": "Four",
-		"correctOption": "optionA"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How many planets are currently in the solar system ?",
@@ -167,7 +167,7 @@ const questions =[
 		"optionB": "Eleven",
 		"optionC": "Seven",
 		"optionD": "Nine",
-		"correctOption": "optionD"
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Which Planet is the hottest ?",
@@ -175,7 +175,7 @@ const questions =[
 		"optionB": "Jupitar",
 		"optionC": "Mercury",
 		"optionD": "Earth",
-		"correctOption": "optionB"
+		"correctOption": "optionC"
 	},
 	{
 		"question": "where is the smallest bone in human body located?",
@@ -183,7 +183,7 @@ const questions =[
 		"optionB": "Toes",
 		"optionC": "Ears",
 		"optionD": "Fingers",
-		"correctOption": "optionB"
+		"correctOption": "optionC"
 	},
 	{
 		"question": "How many hearts does an Octopus have ?",
@@ -191,7 +191,7 @@ const questions =[
 		"optionB": "One",
 		"optionC": "Two",
 		"optionD": "Three",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How many teeth does an adult human have ?",
@@ -199,7 +199,7 @@ const questions =[
 		"optionB": "28",
 		"optionC": "30",
 		"optionD": "32",
-		"correctOption": "optionC"
+		"correctOption": "optionD"
 	}
 ]
 
