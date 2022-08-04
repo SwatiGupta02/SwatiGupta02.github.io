@@ -108,6 +108,10 @@ input[type="radio"] {
   display: none;
 }
 
+.continue-button{
+  width: 100%;
+}
+
 
 input[type=radio]:checked ~ .option {
   background: paleturquoise;
@@ -196,6 +200,12 @@ button{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#timer{
+	font-size:16px;
+	color: white;
+	align-items: center;
 }
 
 .modal-button-container button{
