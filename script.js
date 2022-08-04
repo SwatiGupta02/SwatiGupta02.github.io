@@ -1,3 +1,5 @@
+let timer_array = [];
+const game = {timer:null,start:null,end:null};
 const questions = [
     {
         question: "How many days makes a week ?",
@@ -313,6 +315,7 @@ function checkForAnswer() {
 function handleNextQuestion() {
     checkForAnswer() //check if player picked right or wrong option
     unCheckRadioButtons()
+    endTimer();
     //delays next question displaying for a second just for some effects so questions don't rush in on player
     setTimeout(() => {
         if (indexNumber <= 9) {
@@ -332,6 +335,10 @@ function resetOptionBackground() {
     options.forEach((option) => {
         document.getElementById(option.labels[0].id).style.backgroundColor = ""
     })
+    var T = document.getElementById("TestsDiv");
+    T.style.display = "none"; 
+    var S = document.getElementById("TestsDivs");
+    S.style.display = "none"; 
 }
 
 // unchecking all radio buttons for next question(can be done with map or foreach loop also)
@@ -360,7 +367,7 @@ function handleEndGame() {
         remark = "Excellent, Keep the good work going."
         remarkColor = "green"
     }
-    const playerGrade = (playerScore / 10) * 100
+    const playerGrade = (playerScore / questions.length) * 100
 
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
@@ -369,6 +376,7 @@ function handleEndGame() {
     document.getElementById('wrong-answers').innerHTML = wrongAttempt
     document.getElementById('right-answers').innerHTML = playerScore
     document.getElementById('score-modal').style.display = "flex"
+    document.getElementById('timer').innerHTML = timer_array;
 
 }
 
@@ -383,7 +391,24 @@ function closeScoreModal() {
     document.getElementById('score-modal').style.display = "none"
 }
 
-//function to close warning modal
-function closeOptionModal() {
-    document.getElementById('option-modal').style.display = "none"
+function getOptions() {
+    var T = document.getElementById("TestsDiv");
+    T.style.display = "flex"; 
+    var S = document.getElementById("TestsDivs");
+    S.style.display = "flex"; 
+    startTimer();
 }
+
+
+function startTimer(){
+    const date = new Date(); 
+    game.start = date.getTime();
+ }
+
+function endTimer(){
+    const date = new Date();
+    game.end = date.getTime();
+    const totalTime = ((game.end-game.start)/1000);
+    timer_array.push(totalTime);
+    clearInterval(game.timer);
+ }
