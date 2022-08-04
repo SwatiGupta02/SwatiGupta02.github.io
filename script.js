@@ -2,207 +2,422 @@ let timer_array = [];
 const game = {timer:null,start:null,end:null};
 const questions = [
 	{
-		"question": "How many days makes a week ?",
-		"optionA": "7 days",
-		"optionB": "10 days",
-		"optionC": "14 days",
-		"optionD": "5 days",
+		"question": "What is the captial of State  Andhra Pradesh ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Arunachal Pradesh ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Arunachal Pradesh",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State Assam ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Assam",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Bihar ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
 		"correctOption": "optionA"
+	},
+	{
+		"question": "What is the captial of State Chhattisgarh ?",
+		"optionA": "Patna",
+		"optionB": "Raipur",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Goa  ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Goa",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Gujarat  ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Gandhinagar",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State  Haryana ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Chandigarh",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State  Himachal Pradesh ?",
+		"optionA": "Patna",
+		"optionB": "Shimla",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Jharkhand  ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Ranchi",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State  Karnataka ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Bengaluru",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Kerala  ?",
+		"optionA": "Thiruvananthapuram",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "What is the captial of State Madhya Pradesh  ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Bhopal",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State  Maharashtra ?",
+		"optionA": "Mumbai",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "What is the captial of State Manipur  ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Imphal",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State  Meghalaya ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Shillong",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State  Mizoram ?",
+		"optionA": "Patna",
+		"optionB": "Aizawl",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State  Nagaland ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Kohima",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State Odisha  ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Bhubaneswar",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State  Punjab ?",
+		"optionA": "Chandigarh",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "What is the captial of State   Rajasthan?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Jaipur",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State Sikkim  ?",
+		"optionA": "Gangtok",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "What is the captial of State  Tamil Nadu ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Chennai",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State  Telangana ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Hyderabad",
+		"optionD": "Dispur",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "What is the captial of State Tripura  ?",
+		"optionA": "Agartala",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "What is the captial of State  Uttar Pradesh ?",
+		"optionA": "Patna",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Lucknow",
+		"correctOption": "optionD"
+	},
+	{
+		"question": "What is the captial of State  West Bengal ?",
+		"optionA": "Kolkata",
+		"optionB": "Amaravati",
+		"optionC": "Itanagar",
+		"optionD": "Dispur",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "How many days makes a week ?",
+		"optionA": "5 days",
+		"optionB": "7 days",
+		"optionC": "10 days",
+		"optionD": "14 days",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How many players are allowed on a soccer pitch ?",
-		"optionA": "12 players",
-		"optionB": "10 players",
-		"optionC": "11 players",
-		"optionD": "9 players",
-		"correctOption": "optionC"
+		"optionA": "9 players",
+		"optionB": "12 players",
+		"optionC": "10 players",
+		"optionD": "11 players",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Who was the first President of USA ?",
-		"optionA": "George Washington",
-		"optionB": "Donald Trump",
-		"optionC": "Barack Obama",
-		"optionD": "Abraham Lincoln",
-		"correctOption": "optionA"
+		"optionA": "Abraham Lincoln",
+		"optionB": "George Washington",
+		"optionC": "Donald Trump",
+		"optionD": "Barack Obama",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "30 days has ______ ?",
-		"optionA": "August",
-		"optionB": "January",
-		"optionC": "December",
-		"optionD": "June",
-		"correctOption": "optionD"
+		"optionA": "June",
+		"optionB": "August",
+		"optionC": "January",
+		"optionD": "December",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "How manay hours can be found in a day ?",
-		"optionA": "24 hours",
-		"optionB": "30 hours",
-		"optionC": "38 hours",
-		"optionD": "48 hours",
-		"correctOption": "optionA"
+		"optionA": "48 hours",
+		"optionB": "24 hours",
+		"optionC": "30 hours",
+		"optionD": "38 hours",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Which is the longest river in the world ?",
-		"optionA": "Lake Chad",
-		"optionB": "River Nile",
-		"optionC": "Long River",
-		"optionD": "River Niger",
-		"correctOption": "optionD"
+		"optionA": "River Niger",
+		"optionB": "Lake Chad",
+		"optionC": "River Nile",
+		"optionD": "Long River",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "_____ is the hottest Continent on Earth ?",
-		"optionA": "North America",
-		"optionB": "Oceania",
-		"optionC": "Antarctica",
-		"optionD": "Africa",
-		"correctOption": "optionD"
+		"optionA": "Africa",
+		"optionB": "North America",
+		"optionC": "Oceania",
+		"optionD": "Antarctica",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Which country is the largest in the world ?",
-		"optionA": "Egypt",
-		"optionB": "Russia",
-		"optionC": "Canada",
-		"optionD": "Africa",
-		"correctOption": "optionD"
+		"optionA": "Africa",
+		"optionB": "Egypt",
+		"optionC": "Russia",
+		"optionD": "Canada",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Which of these numbers is an odd number ?",
-		"optionA": "Eleven",
-		"optionB": "Ten",
-		"optionC": "Twelve",
-		"optionD": "Eight",
-		"correctOption": "optionA"
+		"optionA": "Eight",
+		"optionB": "Eleven",
+		"optionC": "Ten",
+		"optionD": "Twelve",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "`\"You Can't see me is a popular saying by`",
-		"optionA": "John Cena",
-		"optionB": "Eminem",
-		"optionC": "Bill Gates",
-		"optionD": "Chris Brown",
-		"correctOption": "optionA"
+		"optionA": "Chris Brown",
+		"optionB": "John Cena",
+		"optionC": "Eminem",
+		"optionD": "Bill Gates",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Where is the world tallest building located ?",
-		"optionA": "Italy",
-		"optionB": "Africa",
-		"optionC": "California",
-		"optionD": "Dubai",
-		"correctOption": "optionD"
+		"optionA": "Dubai",
+		"optionB": "Italy",
+		"optionC": "Africa",
+		"optionD": "California",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "The longest river in the United Kingdom is ?",
-		"optionA": "River Tweed",
-		"optionB": "River Severn",
-		"optionC": "River Mersey",
-		"optionD": "River Trent",
-		"correctOption": "optionD"
+		"optionA": "River Trent",
+		"optionB": "River Tweed",
+		"optionC": "River Severn",
+		"optionD": "River Mersey",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "How many permanent teeth does a dog have ?",
-		"optionA": "36",
-		"optionB": "38",
-		"optionC": "42",
-		"optionD": "40",
-		"correctOption": "optionC"
+		"optionA": "40",
+		"optionB": "36",
+		"optionC": "38",
+		"optionD": "42",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Which national team won the football World cup in 2018 ?",
-		"optionA": "France",
-		"optionB": "England",
-		"optionC": "Brazil",
-		"optionD": "Germany",
-		"correctOption": "optionA"
+		"optionA": "Germany",
+		"optionB": "France",
+		"optionC": "England",
+		"optionD": "Brazil",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "Which US state was Donald Trump Born ?",
-		"optionA": "Los Angeles",
-		"optionB": "New York",
-		"optionC": "California",
-		"optionD": "New Jersey",
-		"correctOption": "optionD"
+		"optionA": "New Jersey",
+		"optionB": "Los Angeles",
+		"optionC": "New York",
+		"optionD": "California",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "How man states does Nigeria have ?",
-		"optionA": "37",
-		"optionB": "24",
-		"optionC": "30",
-		"optionD": "36",
-		"correctOption": "optionD"
+		"optionA": "36",
+		"optionB": "37",
+		"optionC": "24",
+		"optionD": "30",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "____ is the capital of Nigeria ?",
-		"optionA": "Kano",
-		"optionB": "Abuja",
-		"optionC": "Lagos",
-		"optionD": "Calabar",
-		"correctOption": "optionD"
+		"optionA": "Calabar",
+		"optionB": "Kano",
+		"optionC": "Abuja",
+		"optionD": "Lagos",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "Los Angeles is also known as ?",
-		"optionA": "Lost Angels",
-		"optionB": "Angels City",
-		"optionC": "Shining city",
-		"optionD": "City of Angels",
-		"correctOption": "optionD"
+		"optionA": "City of Angels",
+		"optionB": "Lost Angels",
+		"optionC": "Angels City",
+		"optionD": "Shining city",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "What is the capital of Germany ?",
-		"optionA": "Berlin",
-		"optionB": "Georgia",
-		"optionC": "Missouri",
-		"optionD": "Oklahoma",
-		"correctOption": "optionA"
+		"optionA": "Oklahoma",
+		"optionB": "Berlin",
+		"optionC": "Georgia",
+		"optionD": "Missouri",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How many sides does an hexagon have ?",
-		"optionA": "Five",
-		"optionB": "Six",
-		"optionC": "Sevene",
-		"optionD": "Four",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "How many planets are currently in the solar system ?",
-		"optionA": "Eight",
-		"optionB": "Eleven",
-		"optionC": "Seven",
-		"optionD": "Nine",
+		"optionA": "Four",
+		"optionB": "Five",
+		"optionC": "Six",
+		"optionD": "Sevene",
 		"correctOption": "optionA"
 	},
 	{
+		"question": "How many planets are currently in the solar system ?",
+		"optionA": "Nine",
+		"optionB": "Eight",
+		"optionC": "Eleven",
+		"optionD": "Seven",
+		"correctOption": "optionD"
+	},
+	{
 		"question": "Which Planet is the hottest ?",
-		"optionA": "Venus",
-		"optionB": "Jupitar",
-		"optionC": "Mercury",
-		"optionD": "Earth",
-		"correctOption": "optionC"
+		"optionA": "Earth",
+		"optionB": "Venus",
+		"optionC": "Jupitar",
+		"optionD": "Mercury",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "where is the smallest bone in human body located?",
-		"optionA": "Nose",
-		"optionB": "Toes",
-		"optionC": "Ears",
-		"optionD": "Fingers",
-		"correctOption": "optionC"
+		"optionA": "Fingers",
+		"optionB": "Nose",
+		"optionC": "Toes",
+		"optionD": "Ears",
+		"correctOption": "optionD"
 	},
 	{
 		"question": "How many hearts does an Octopus have ?",
-		"optionA": "Four",
-		"optionB": "One",
-		"optionC": "Two",
-		"optionD": "Three",
-		"correctOption": "optionD"
+		"optionA": "Three",
+		"optionB": "Four",
+		"optionC": "One",
+		"optionD": "Two",
+		"correctOption": "optionA"
 	},
 	{
 		"question": "How many teeth does an adult human have ?",
-		"optionA": "36",
-		"optionB": "28",
-		"optionC": "30",
-		"optionD": "32",
-		"correctOption": "optionD"
+		"optionA": "32",
+		"optionB": "36",
+		"optionC": "28",
+		"optionD": "30",
+		"correctOption": "optionA"
 	}
 ]
-
 
 let shuffledQuestions = [] //empty array to hold shuffled selected questions out of all available questions
 
