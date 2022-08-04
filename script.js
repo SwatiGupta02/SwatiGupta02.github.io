@@ -2,76 +2,12 @@ let timer_array = [];
 const game = {timer:null,start:null,end:null};
 const questions = [
 	{
-		"question": "Which US state was Donald Trump Born ?",
-		"optionA": "Los Angeles",
-		"optionB": "New York",
-		"optionC": "California",
-		"optionD": "New Jersey",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "Where is the world tallest building located ?",
-		"optionA": "Italy",
-		"optionB": "Africa",
-		"optionC": "California",
-		"optionD": "Dubai",
-		"correctOption": "optionC"
-	},
-	{
-		"question": "Who was the first President of USA ?",
-		"optionA": "George Washington",
-		"optionB": "Donald Trump",
-		"optionC": "Barack Obama",
-		"optionD": "Abraham Lincoln",
-		"correctOption": "optionD"
-	},
-	{
 		"question": "How many days makes a week ?",
 		"optionA": "7 days",
 		"optionB": "10 days",
 		"optionC": "14 days",
 		"optionD": "5 days",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the capital of Germany ?",
-		"optionA": "Berlin",
-		"optionB": "Georgia",
-		"optionC": "Missouri",
-		"optionD": "Oklahoma",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "Los Angeles is also known as ?",
-		"optionA": "Lost Angels",
-		"optionB": "Angels City",
-		"optionC": "Shining city",
-		"optionD": "City of Angels",
-		"correctOption": "optionC"
-	},
-	{
-		"question": "How many sides does an hexagon have ?",
-		"optionA": "Five",
-		"optionB": "Six",
-		"optionC": "Sevene",
-		"optionD": "Four",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "How many permanent teeth does a dog have ?",
-		"optionA": "36",
-		"optionB": "38",
-		"optionC": "42",
-		"optionD": "40",
-		"correctOption": "optionB"
-	},
-	{
-		"question": "Which country is the largest in the world ?",
-		"optionA": "Egypt",
-		"optionB": "Russia",
-		"optionC": "Canada",
-		"optionD": "Africa",
-		"correctOption": "optionA"
+		"correctOption": "5 days"
 	},
 	{
 		"question": "How many players are allowed on a soccer pitch ?",
@@ -79,95 +15,15 @@ const questions = [
 		"optionB": "10 players",
 		"optionC": "11 players",
 		"optionD": "9 players",
-		"correctOption": "optionB"
+		"correctOption": "10 players"
 	},
 	{
-		"question": "_____ is the hottest Continent on Earth ?",
-		"optionA": "North America",
-		"optionB": "Oceania",
-		"optionC": "Antarctica",
-		"optionD": "Africa",
-		"correctOption": "optionC"
-	},
-	{
-		"question": "How man states does Nigeria have ?",
-		"optionA": "37",
-		"optionB": "24",
-		"optionC": "30",
-		"optionD": "36",
-		"correctOption": "optionC"
-	},
-	{
-		"question": "where is the smallest bone in human body located?",
-		"optionA": "Nose",
-		"optionB": "Toes",
-		"optionC": "Ears",
-		"optionD": "Fingers",
-		"correctOption": "optionB"
-	},
-	{
-		"question": "Which Planet is the hottest ?",
-		"optionA": "Venus",
-		"optionB": "Jupitar",
-		"optionC": "Mercury",
-		"optionD": "Earth",
-		"correctOption": "optionB"
-	},
-	{
-		"question": "Which of these numbers is an odd number ?",
-		"optionA": "Eleven",
-		"optionB": "Ten",
-		"optionC": "Twelve",
-		"optionD": "Eight",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "The longest river in the United Kingdom is ?",
-		"optionA": "River Tweed",
-		"optionB": "River Severn",
-		"optionC": "River Mersey",
-		"optionD": "River Trent",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "____ is the capital of Nigeria ?",
-		"optionA": "Kano",
-		"optionB": "Abuja",
-		"optionC": "Lagos",
-		"optionD": "Calabar",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "Which national team won the football World cup in 2018 ?",
-		"optionA": "France",
-		"optionB": "England",
-		"optionC": "Brazil",
-		"optionD": "Germany",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "How many planets are currently in the solar system ?",
-		"optionA": "Eight",
-		"optionB": "Eleven",
-		"optionC": "Seven",
-		"optionD": "Nine",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "`\"You Can't see me is a popular saying by`",
-		"optionA": "John Cena",
-		"optionB": "Eminem",
-		"optionC": "Bill Gates",
-		"optionD": "Chris Brown",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "How manay hours can be found in a day ?",
-		"optionA": "24 hours",
-		"optionB": "30 hours",
-		"optionC": "38 hours",
-		"optionD": "48 hours",
-		"correctOption": "optionD"
+		"question": "Who was the first President of USA ?",
+		"optionA": "George Washington",
+		"optionB": "Donald Trump",
+		"optionC": "Barack Obama",
+		"optionD": "Abraham Lincoln",
+		"correctOption": "Abraham Lincoln"
 	},
 	{
 		"question": "30 days has ______ ?",
@@ -175,23 +31,15 @@ const questions = [
 		"optionB": "January",
 		"optionC": "December",
 		"optionD": "June",
-		"correctOption": "optionC"
+		"correctOption": "December"
 	},
 	{
-		"question": "How many hearts does an Octopus have ?",
-		"optionA": "Four",
-		"optionB": "One",
-		"optionC": "Two",
-		"optionD": "Three",
-		"correctOption": "optionC"
-	},
-	{
-		"question": "How many teeth does an adult human have ?",
-		"optionA": "36",
-		"optionB": "28",
-		"optionC": "30",
-		"optionD": "32",
-		"correctOption": "optionC"
+		"question": "How manay hours can be found in a day ?",
+		"optionA": "24 hours",
+		"optionB": "30 hours",
+		"optionC": "38 hours",
+		"optionD": "48 hours",
+		"correctOption": "48 hours"
 	},
 	{
 		"question": "Which is the longest river in the world ?",
@@ -199,7 +47,159 @@ const questions = [
 		"optionB": "River Nile",
 		"optionC": "Long River",
 		"optionD": "River Niger",
-		"correctOption": "optionA"
+		"correctOption": "Lake Chad"
+	},
+	{
+		"question": "_____ is the hottest Continent on Earth ?",
+		"optionA": "North America",
+		"optionB": "Oceania",
+		"optionC": "Antarctica",
+		"optionD": "Africa",
+		"correctOption": "Antarctica"
+	},
+	{
+		"question": "Which country is the largest in the world ?",
+		"optionA": "Egypt",
+		"optionB": "Russia",
+		"optionC": "Canada",
+		"optionD": "Africa",
+		"correctOption": "Egypt"
+	},
+	{
+		"question": "Which of these numbers is an odd number ?",
+		"optionA": "Eleven",
+		"optionB": "Ten",
+		"optionC": "Twelve",
+		"optionD": "Eight",
+		"correctOption": "Eight"
+	},
+	{
+		"question": "`\"You Can't see me is a popular saying by`",
+		"optionA": "John Cena",
+		"optionB": "Eminem",
+		"optionC": "Bill Gates",
+		"optionD": "Chris Brown",
+		"correctOption": "Chris Brown"
+	},
+	{
+		"question": "Where is the world tallest building located ?",
+		"optionA": "Italy",
+		"optionB": "Africa",
+		"optionC": "California",
+		"optionD": "Dubai",
+		"correctOption": "California"
+	},
+	{
+		"question": "The longest river in the United Kingdom is ?",
+		"optionA": "River Tweed",
+		"optionB": "River Severn",
+		"optionC": "River Mersey",
+		"optionD": "River Trent",
+		"correctOption": "River Tweed"
+	},
+	{
+		"question": "How many permanent teeth does a dog have ?",
+		"optionA": "36",
+		"optionB": "38",
+		"optionC": "42",
+		"optionD": "40",
+		"correctOption": "38"
+	},
+	{
+		"question": "Which national team won the football World cup in 2018 ?",
+		"optionA": "France",
+		"optionB": "England",
+		"optionC": "Brazil",
+		"optionD": "Germany",
+		"correctOption": "Germany"
+	},
+	{
+		"question": "Which US state was Donald Trump Born ?",
+		"optionA": "Los Angeles",
+		"optionB": "New York",
+		"optionC": "California",
+		"optionD": "New Jersey",
+		"correctOption": "Los Angeles"
+	},
+	{
+		"question": "How man states does Nigeria have ?",
+		"optionA": "37",
+		"optionB": "24",
+		"optionC": "30",
+		"optionD": "36",
+		"correctOption": "30"
+	},
+	{
+		"question": "____ is the capital of Nigeria ?",
+		"optionA": "Kano",
+		"optionB": "Abuja",
+		"optionC": "Lagos",
+		"optionD": "Calabar",
+		"correctOption": "Kano"
+	},
+	{
+		"question": "Los Angeles is also known as ?",
+		"optionA": "Lost Angels",
+		"optionB": "Angels City",
+		"optionC": "Shining city",
+		"optionD": "City of Angels",
+		"correctOption": "Shining city"
+	},
+	{
+		"question": "What is the capital of Germany ?",
+		"optionA": "Berlin",
+		"optionB": "Georgia",
+		"optionC": "Missouri",
+		"optionD": "Oklahoma",
+		"correctOption": "Oklahoma"
+	},
+	{
+		"question": "How many sides does an hexagon have ?",
+		"optionA": "Five",
+		"optionB": "Six",
+		"optionC": "Sevene",
+		"optionD": "Four",
+		"correctOption": "Five"
+	},
+	{
+		"question": "How many planets are currently in the solar system ?",
+		"optionA": "Eight",
+		"optionB": "Eleven",
+		"optionC": "Seven",
+		"optionD": "Nine",
+		"correctOption": "Nine"
+	},
+	{
+		"question": "Which Planet is the hottest ?",
+		"optionA": "Venus",
+		"optionB": "Jupitar",
+		"optionC": "Mercury",
+		"optionD": "Earth",
+		"correctOption": "Jupitar"
+	},
+	{
+		"question": "where is the smallest bone in human body located?",
+		"optionA": "Nose",
+		"optionB": "Toes",
+		"optionC": "Ears",
+		"optionD": "Fingers",
+		"correctOption": "Toes"
+	},
+	{
+		"question": "How many hearts does an Octopus have ?",
+		"optionA": "Four",
+		"optionB": "One",
+		"optionC": "Two",
+		"optionD": "Three",
+		"correctOption": "Two"
+	},
+	{
+		"question": "How many teeth does an adult human have ?",
+		"optionA": "36",
+		"optionB": "28",
+		"optionC": "30",
+		"optionD": "32",
+		"correctOption": "30"
 	}
 ]
 
