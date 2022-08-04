@@ -2,421 +2,446 @@ let timer_array = [];
 const game = {timer:null,start:null,end:null};
 const questions = [
 	{
-		"question": "What is the captial of State  Andhra Pradesh ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State Arunachal Pradesh ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Arunachal Pradesh",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy Ashes Series belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State Assam ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Assam",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State Bihar ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "What is the captial of State Chhattisgarh ?",
-		"optionA": "Patna",
-		"optionB": "Raipur",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State Goa  ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Goa",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State Gujarat  ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Gandhinagar",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy Asia Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Haryana ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Chandigarh",
-		"correctOption": "optionD"
+		"question": "Which sports the tropy Benson and Hedges belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
 	},
 	{
-		"question": "What is the captial of State  Himachal Pradesh ?",
-		"optionA": "Patna",
-		"optionB": "Shimla",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State Jharkhand  ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Ranchi",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy C. K. Naidu Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Karnataka ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Bengaluru",
-		"correctOption": "optionD"
+		"question": "Which sports the tropy Coach Behar Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionB"
 	},
 	{
-		"question": "What is the captial of State Kerala  ?",
-		"optionA": "Thiruvananthapuram",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "What is the captial of State Madhya Pradesh  ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Bhopal",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy Deodhar Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Maharashtra ?",
-		"optionA": "Mumbai",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "What is the captial of State Manipur  ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Imphal",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State  Meghalaya ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Shillong",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy Duleep Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Mizoram ?",
-		"optionA": "Patna",
-		"optionB": "Aizawl",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State  Nagaland ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Kohima",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "What is the captial of State Odisha  ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Bhubaneswar",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy G. D. Birla Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Punjab ?",
-		"optionA": "Chandigarh",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionA"
+		"question": "Which sports the tropy  Ghulam Ahmed Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionB"
 	},
 	{
-		"question": "What is the captial of State   Rajasthan?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Jaipur",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy  ICC Champions Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State Sikkim  ?",
-		"optionA": "Gangtok",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionA"
+		"question": "Which sports the tropy  ICC World Cup belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
 	},
 	{
-		"question": "What is the captial of State  Tamil Nadu ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Chennai",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy  Irani Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Telangana ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Hyderabad",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy Moinuddowla Gold Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State Tripura  ?",
-		"optionA": "Agartala",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
-		"correctOption": "optionA"
+		"question": "Which sports the tropy MRF World Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionC"
 	},
 	{
-		"question": "What is the captial of State  Uttar Pradesh ?",
-		"optionA": "Patna",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Lucknow",
+		"question": "Which sports the tropy Nehru Cup (Jawaharlal Nehru Cup) belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Rani Jhansi Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy  Ranji Trophy  belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Reliance Cup  belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Rohinton Baria Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy  Rothman’s Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Sahara Cup  belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy  Sheesh Mahal Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Vijay Merchant Trophybelongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionB"
+	},
+	{
+		"question": "Which sports the tropy Vizzy Trophy  belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Wills Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Chakra Gold Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "What is the captial of State  West Bengal ?",
-		"optionA": "Kolkata",
-		"optionB": "Amaravati",
-		"optionC": "Itanagar",
-		"optionD": "Dispur",
+		"question": "Which sports the tropy Bandodkar Trophy belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Colombo Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionA"
 	},
 	{
-		"question": "How many days makes a week ?",
-		"optionA": "5 days",
-		"optionB": "7 days",
-		"optionC": "10 days",
-		"optionD": "14 days",
+		"question": "Which sports the tropy D. C. M. Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Dr. B. C. Roy Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "How many players are allowed on a soccer pitch ?",
-		"optionA": "9 players",
-		"optionB": "12 players",
-		"optionC": "10 players",
-		"optionD": "11 players",
+		"question": "Which sports the tropy Dr. B.C. Roy Trophy: Football (Junior) belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Durand Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "Who was the first President of USA ?",
-		"optionA": "Abraham Lincoln",
-		"optionB": "George Washington",
-		"optionC": "Donald Trump",
-		"optionD": "Barack Obama",
+		"question": "Which sports the tropy Durand Cup, F. A. Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy European Champions Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy F. A. Shield belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy FA Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "30 days has ______ ?",
-		"optionA": "June",
-		"optionB": "August",
-		"optionC": "January",
-		"optionD": "December",
+		"question": "Which sports the tropy Federation Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionA"
 	},
 	{
-		"question": "How manay hours can be found in a day ?",
-		"optionA": "48 hours",
-		"optionB": "24 hours",
-		"optionC": "30 hours",
-		"optionD": "38 hours",
+		"question": "Which sports the tropy FIFA World Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "Which is the longest river in the world ?",
-		"optionA": "River Niger",
-		"optionB": "Lake Chad",
-		"optionC": "River Nile",
-		"optionD": "Long River",
+		"question": "Which sports the tropy G.V. Raja Memorial Trophy belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy IFA Shield belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionA"
 	},
 	{
-		"question": "_____ is the hottest Continent on Earth ?",
-		"optionA": "Africa",
-		"optionB": "North America",
-		"optionC": "Oceania",
-		"optionD": "Antarctica",
-		"correctOption": "optionA"
+		"question": "Which sports the tropy Jules Rimet Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionC"
 	},
 	{
-		"question": "Which country is the largest in the world ?",
-		"optionA": "Africa",
-		"optionB": "Egypt",
-		"optionC": "Russia",
-		"optionD": "Canada",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "Which of these numbers is an odd number ?",
-		"optionA": "Eight",
-		"optionB": "Eleven",
-		"optionC": "Ten",
-		"optionD": "Twelve",
+		"question": "Which sports the tropy Kalinga Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "`\"You Can't see me is a popular saying by`",
-		"optionA": "Chris Brown",
-		"optionB": "John Cena",
-		"optionC": "Eminem",
-		"optionD": "Bill Gates",
+		"question": "Which sports the tropy Merdeka Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Najee Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "Where is the world tallest building located ?",
-		"optionA": "Dubai",
-		"optionB": "Italy",
-		"optionC": "Africa",
-		"optionD": "California",
+		"question": "Which sports the tropy Nixon Gold Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Raghbir Singh Memorial Cup belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionA"
 	},
 	{
-		"question": "The longest river in the United Kingdom is ?",
-		"optionA": "River Trent",
-		"optionB": "River Tweed",
-		"optionC": "River Severn",
-		"optionD": "River Mersey",
-		"correctOption": "optionA"
+		"question": "Which sports the tropy Rovers Cup belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
 	},
 	{
-		"question": "How many permanent teeth does a dog have ?",
-		"optionA": "40",
-		"optionB": "36",
-		"optionC": "38",
-		"optionD": "42",
+		"question": "Which sports the tropy Sanjay Gold Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "Which national team won the football World cup in 2018 ?",
-		"optionA": "Germany",
-		"optionB": "France",
-		"optionC": "England",
-		"optionD": "Brazil",
+		"question": "Which sports the tropy Santosh Trophy (National Football) belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
+		"correctOption": "optionA"
+	},
+	{
+		"question": "Which sports the tropy Scissor Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "Which US state was Donald Trump Born ?",
-		"optionA": "New Jersey",
-		"optionB": "Los Angeles",
-		"optionC": "New York",
-		"optionD": "California",
+		"question": "Which sports the tropy Sir Ashutosh Mukherjee Trophy belongs to ?",
+		"optionA": "Badminton",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Hockey",
+		"correctOption": "optionC"
+	},
+	{
+		"question": "Which sports the tropy Subrata Mukherjee Cup (National school football) belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionA"
 	},
 	{
-		"question": "How man states does Nigeria have ?",
-		"optionA": "36",
-		"optionB": "37",
-		"optionC": "24",
-		"optionD": "30",
-		"correctOption": "optionA"
+		"question": "Which sports the tropy Subroto Cup belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Cricket",
+		"optionC": "Footbal",
+		"optionD": "Badminton",
+		"correctOption": "optionC"
 	},
 	{
-		"question": "____ is the capital of Nigeria ?",
-		"optionA": "Calabar",
-		"optionB": "Kano",
-		"optionC": "Abuja",
-		"optionD": "Lagos",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "Los Angeles is also known as ?",
-		"optionA": "City of Angels",
-		"optionB": "Lost Angels",
-		"optionC": "Angels City",
-		"optionD": "Shining city",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "What is the capital of Germany ?",
-		"optionA": "Oklahoma",
-		"optionB": "Berlin",
-		"optionC": "Georgia",
-		"optionD": "Missouri",
+		"question": "Which sports the tropy Todd Memorial Trophy belongs to ?",
+		"optionA": "Hockey",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Footbal",
 		"correctOption": "optionD"
 	},
 	{
-		"question": "How many sides does an hexagon have ?",
-		"optionA": "Four",
-		"optionB": "Five",
-		"optionC": "Six",
-		"optionD": "Sevene",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "How many planets are currently in the solar system ?",
-		"optionA": "Nine",
-		"optionB": "Eight",
-		"optionC": "Eleven",
-		"optionD": "Seven",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "Which Planet is the hottest ?",
-		"optionA": "Earth",
-		"optionB": "Venus",
-		"optionC": "Jupitar",
-		"optionD": "Mercury",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "where is the smallest bone in human body located?",
-		"optionA": "Fingers",
-		"optionB": "Nose",
-		"optionC": "Toes",
-		"optionD": "Ears",
-		"correctOption": "optionD"
-	},
-	{
-		"question": "How many hearts does an Octopus have ?",
-		"optionA": "Three",
-		"optionB": "Four",
-		"optionC": "One",
-		"optionD": "Two",
-		"correctOption": "optionA"
-	},
-	{
-		"question": "How many teeth does an adult human have ?",
-		"optionA": "32",
-		"optionB": "36",
-		"optionC": "28",
-		"optionD": "30",
+		"question": "Which sports the tropy Vittal Trophy belongs to ?",
+		"optionA": "Footbal",
+		"optionB": "Badminton",
+		"optionC": "Cricket",
+		"optionD": "Hockey",
 		"correctOption": "optionA"
 	}
+]
 ]
 let shuffledQuestions = [] //empty array to hold shuffled selected questions out of all available questions
 
