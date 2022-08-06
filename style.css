@@ -70,7 +70,7 @@ main{
 
 .game-options-container{
   width: 80%;
-  height: 12rem;
+  height: 14rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -78,7 +78,7 @@ main{
 }
 
 .game-options-container span{
-  width: 25%;
+  width: 51%;
   height: 3rem;
   border: 2px solid darkgray;
   border-radius: 20px;
