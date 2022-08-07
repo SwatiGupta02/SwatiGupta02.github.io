@@ -228,7 +228,7 @@ button{
 }
 
 
-@media(min-width : 350px) and (max-width : 750px){
+@media(min-width : 400px) and (max-width : 750px){
   .game-quiz-container1{
       width: 90%;
       height: 80vh;
