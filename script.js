@@ -1235,7 +1235,10 @@ const questions = [
 	}
 ]
 let shuffledQuestions = [] //empty array to hold shuffled selected questions out of all available questions
-
+function OnDoubleClick() {
+  //document.getElementById("demo").innerHTML = "Hello World";
+  alert('Hi')
+}
 function handleQuestions() { 
     //function to shuffle and push 10 questions to shuffledQuestions array
 //app would be dealing with 10questions per session
