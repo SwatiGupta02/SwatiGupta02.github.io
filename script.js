@@ -1265,7 +1265,7 @@ function NextQuestion(index) {
     document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
     document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
     document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
-    document.getElementById("continueButton").click();
+    //document.getElementById("continueButton").click();
 
 }
 
