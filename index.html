@@ -9,8 +9,7 @@
 </head>
 <body onload="NextQuestion(0)">
   <main>
-    <div id="doubleClick" ondblclick="OnDoubleClick()" class="game-quiz-container1">
-      <div   class="modal-container" id="score-modal">
+        <div   class="modal-container" id="score-modal"  ondblclick="OnDoubleClick()">
 
           <div class="modal-content-container">
 
@@ -31,7 +30,7 @@
           </div>
       </div>
       
-      <div class="game-quiz-container">
+      <div class="game-quiz-container"  ondblclick="OnDoubleClick()">
 
           <div class="game-details-container">
               <h1>Score : <span id="player-score"></span> / 10</h1>
@@ -69,7 +68,7 @@
             </div>
           </div>
       </div>
-  </div>
+
   </main>
   <script src="script.js"></script>
 </body>
