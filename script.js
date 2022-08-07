@@ -1,5 +1,5 @@
 let timer_array = [];
-const game = {timer:null,start:null,end:null};
+const game = {start:null,end:null};
 const questions = [
 	{
 		"question": "Which sports the tropy Ashes Series belongs to ?",
@@ -1324,10 +1324,11 @@ function handleNextQuestion() {
     setTimeout(() => {
         if (indexNumber <= 9) {
 //displays next question as long as index number isn't greater than 9, remember index number starts from 0, so index 9 is question 10
-            NextQuestion(indexNumber)
+            NextQuestion(indexNumber);
         }
         else {
-            handleEndGame()//ends game if index number greater than 9 meaning we're already at the 10th question
+            handleEndGame();
+			//ends game if index number greater than 9 meaning we're already at the 10th question
         }
         resetOptionBackground()
     }, 1000);
@@ -1402,8 +1403,6 @@ function closeScoreModal() {
 function getOptions() {
     var T = document.getElementById("TestsDiv");
     T.style.display = "flex"; 
-    //var S = document.getElementById("TestsDivs");
-    //S.style.display = "flex"; 
     startTimer();
 }
 
