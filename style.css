@@ -227,6 +227,12 @@ button{
   background-color: rgb(83, 82, 82);
 }
 
+
+@media(min-width : 350px) and (max-width : 750px){
+  .game-quiz-container1{
+      width: 90%;
+      height: 80vh;
+  
 @media(min-width : 300px) and (max-width : 350px){
   .game-quiz-container{
       width: 90%;
