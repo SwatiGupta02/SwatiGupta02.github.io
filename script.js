@@ -1402,8 +1402,8 @@ function closeScoreModal() {
 function getOptions() {
     var T = document.getElementById("TestsDiv");
     T.style.display = "flex"; 
-    var S = document.getElementById("TestsDivs");
-    S.style.display = "flex"; 
+    //var S = document.getElementById("TestsDivs");
+    //S.style.display = "flex"; 
     startTimer();
 }
 
