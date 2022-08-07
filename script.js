@@ -1342,8 +1342,6 @@ function resetOptionBackground() {
     })
     var T = document.getElementById("TestsDiv");
     T.style.display = "none"; 
-    var S = document.getElementById("TestsDivs");
-    S.style.display = "none"; 
 }
 
 // unchecking all radio buttons for next question(can be done with map or foreach loop also)
