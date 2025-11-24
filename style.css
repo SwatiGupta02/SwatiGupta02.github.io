@@ -24,7 +24,7 @@ body {
     align-items: center;
 
     /* Background image setup */
-    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fin%2Fgolden-fields-resort-a-unit-of-beaver-golden-fields.html&psig=AOvVaw1guTvYHQfLktEoWVnBI_e6&ust=1764044599904000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiCg9j5iZEDFQAAAAAdAAAAABAX');
+    background-image: './assets/golden_fields.jpg';
     background-size: cover; /* Ensures the image covers the whole container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;
