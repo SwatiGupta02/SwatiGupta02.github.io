@@ -20,14 +20,20 @@ body {
     /* Center the content (names) vertically and horizontally */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* CHANGED: Position names at the bottom, like in your photo */
+    justify-content: flex-end; 
     align-items: center;
+    padding-bottom: 10vh; /* Adds space above the bottom edge */
 
-    /* Background image setup */
-    background-image: './assets/golden_fields.jpg';
+    /* Background image setup - FIXED SYNTAX: Must use url() */
+    background-image: url('./assets/golden_fields.jpg'); 
     background-size: cover; /* Ensures the image covers the whole container */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;
+    
+    /* Ensure text is readable */
+    position: relative;
+    z-index: 1;
 }
 
 /* --- Text Styling (Swati & Shubhankar) --- */
