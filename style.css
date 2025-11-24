@@ -6,76 +6,72 @@
 }
 
 body {
-    /* Smooth scrolling behavior for a nice user experience */
     scroll-behavior: smooth;
     font-family: sans-serif; /* Fallback font */
 }
 
 /* --- Full Screen Section Styling (Hero Image) --- */
 .full-screen-section {
-    /* Ensures the section fills the entire screen height and width */
     width: 100vw;
     height: 100vh;
     
-    /* Center the content (names) vertically and horizontally */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 10vh; /* Adds space above the bottom edge */
 
-    /* Background image setup - FIXED SYNTAX: Must use url() */
-    background-image: url('assets/golden-fields-background.jpg'); 
-    background-size: cover; /* Ensures the image covers the whole container */
-    background-position: center; /* Centers the image */
+    /* Background image setup - CRUCIAL CHANGE HERE: Updated file path */
+    background-image: url('./assets/golden-fields-background.jpg'); 
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     
-    /* Ensure text is readable */
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
-/* --- Text Styling (Swati & Shubhankar) --- */
-.couple-names {
-    /* Suggested elegant, handwritten font: Dancing Script */
-    font-family: 'Dancing Script', cursive;
-    font-size: 8rem; /* Large font size for impact */
-    color: #ffffff; /* White text for contrast against the image */
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.7), /* Stronger shadow for better readability */
-        -2px -2px 4px rgba(0, 0, 0, 0.7);
-    margin-bottom: 10px;
-    margin-top: 10vh;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.tagline {
-    font-family: 'Playfair Display', serif; /* A classic serif font for the subtitle */
-    font-size: 1.5rem;
+/* --- Text Styling (We are getting married!) --- */
+.wedding-message {
+    /* Using Cedarville Cursive for the 'Brittany Signature' style */
+    font-family: 'Cedarville Cursive', cursive; 
+    font-size: 5rem;
     color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-    text-transform: uppercase;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7);
+    
+    /* Absolute positioning to place it precisely */
+    position: absolute;
+    top: 20%; 
+    right: 10%; 
+    
+    /* Rotate the text slightly */
+    transform: rotate(5deg); 
+    
+    text-align: right;
+    line-height: 1.2;
+    z-index: 2;
+    white-space: nowrap; 
 }
 
-/* --- Responsive Adjustments (Important for mobile viewing) --- */
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
-    .couple-names {
-        font-size: 4rem; /* Smaller font size on mobile screens */
-    }
-    .tagline {
-        font-size: 1.2rem;
+    .wedding-message {
+        font-size: 2.5rem; 
+        top: 15%; 
+        right: 5%;
+        transform: rotate(3deg); 
     }
 }
 
 /* --- Scrollable Content Section Styling (Example) --- */
 .content-section {
     padding: 50px 20px;
-    background-color: #f7f7f7; /* Light background for the content area */
-    min-height: 100vh; /* Ensure there's enough content to scroll */
+    background-color: #f7f7f7;
+    min-height: 100vh;
 }
 
 .content-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: sans-serif;
     font-size: 2.5rem;
     color: #333;
     text-align: center;
