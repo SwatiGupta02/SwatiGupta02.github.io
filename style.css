@@ -28,6 +28,7 @@ body {
     /* Background image setup - FIXED SYNTAX: Must use url() */
     background-image: url('assets/golden_fields.jpg'); 
     background-size: cover; /* Ensures the image covers the whole container */
+    background-color: red;
     background-position: center; /* Centers the image */
     background-repeat: no-repeat;
     
