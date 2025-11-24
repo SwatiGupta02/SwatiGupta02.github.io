@@ -20,8 +20,6 @@ body {
     /* Center the content (names) vertically and horizontally */
     display: flex;
     flex-direction: column;
-    /* CHANGED: Position names at the bottom, like in your photo */
-    justify-content: flex-end; 
     align-items: center;
     padding-bottom: 10vh; /* Adds space above the bottom edge */
 
@@ -46,6 +44,7 @@ body {
         2px 2px 4px rgba(0, 0, 0, 0.7), /* Stronger shadow for better readability */
         -2px -2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 10px;
+    margin-top: 10vh;
     letter-spacing: 2px;
     text-align: center;
 }
