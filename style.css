@@ -1,308 +1,78 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body{
-  height: 100%;
+body {
+    /* Smooth scrolling behavior for a nice user experience */
+    scroll-behavior: smooth;
+    font-family: sans-serif; /* Fallback font */
 }
 
+/* --- Full Screen Section Styling (Hero Image) --- */
+.full-screen-section {
+    /* Ensures the section fills the entire screen height and width */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Center the content (names) vertically and horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-body{
-  font-family: 'Montserrat', serif;
-
+    /* Background image setup */
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fin%2Fgolden-fields-resort-a-unit-of-beaver-golden-fields.html&psig=AOvVaw1guTvYHQfLktEoWVnBI_e6&ust=1764044599904000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiCg9j5iZEDFQAAAAAdAAAAABAX');
+    background-size: cover; /* Ensures the image covers the whole container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
 }
 
-main{
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  background: url('../assets/background_image.jpg');
-  background-color : black;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+/* --- Text Styling (Swati & Shubhankar) --- */
+.couple-names {
+    /* Suggested elegant, handwritten font: Dancing Script */
+    font-family: 'Dancing Script', cursive;
+    font-size: 8rem; /* Large font size for impact */
+    color: #ffffff; /* White text for contrast against the image */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7), /* Stronger shadow for better readability */
+        -2px -2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
-.game-quiz-container{
-  width: 100%;
-  height: 100%;
-  background-color: lightgray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 30px;
+.tagline {
+    font-family: 'Playfair Display', serif; /* A classic serif font for the subtitle */
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    text-transform: uppercase;
 }
 
-.game-details-container{
-  width: 80%;
-  height: 4rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+/* --- Responsive Adjustments (Important for mobile viewing) --- */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 4rem; /* Smaller font size on mobile screens */
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
 }
 
-.game-details-container h1{
-  font-size: 1.2rem;
+/* --- Scrollable Content Section Styling (Example) --- */
+.content-section {
+    padding: 50px 20px;
+    background-color: #f7f7f7; /* Light background for the content area */
+    min-height: 100vh; /* Ensure there's enough content to scroll */
 }
 
-.game-question-container{
-  width: 80%;
-  height: 8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid darkgray;
-  border-radius: 25px;
-}
-
-.game-question-container h1{
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 3px;
-}
-
-.game-options-container{
-  width: 80%;
-  height: 14rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.game-options-container span{
-  width: 51%;
-  height: 3rem;
-  border: 2px solid darkgray;
-  border-radius: 20px;
-  overflow: hidden;
-}
-span label{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-  font-weight: 600;
-  color: rgb(22, 22, 22);
-}
-
-span label:hover{
-  -ms-transform: scale(1.12);
-  -webkit-transform: scale(1.12);
-  transform: scale(1.12);
-  color: white;
-}
-
-input[type="radio"] {
-  position: relative;
-  display: none;
-}
-
-.continue-button{
-  margin-bottom: 20%;
-  width: 100%;
-}
-
-
-input[type=radio]:checked ~ .option {
-  background: paleturquoise;
-}
-
-.next-button-container{
-  height: 5rem;
-  display: flex;
-  margin-left: 45%;
-  justify-content: center;
-}
-button{
-  width: 20%;
-  height: 20%;
-}
-
-.next-button-container button{
-  width: 12rem;
-  height: 3rem;
-  border-radius: 10px;
-  background: none;
-  color: rgb(25, 25, 25);
-  font-weight: 600;
-  font-size: 14px;
-  border: 2px solid gray;
-  cursor: pointer;
-  outline: none;
-}
-.next-button-container button:hover{
-  background-color: rgb(143, 93, 93);
-}
-
-.modal-container{
-  display: none;
-  position: fixed;
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
-  -webkit-animation: fadeIn 1.2s ease-in-out;
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-.modal-content-container{
-  height: 70%;
-  width: 70%;
-  background-color: rgb(43, 42, 42);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 25px;
-}
-
-.modal-content-container h1{
-  font-size: 1.3rem;
-  height: 3rem;
-  color: lightgray;
-  text-align: center;
-}
-
-.grade-details{
-  width: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin-top:10%;
-}
-
-.grade-details p{
-  color: white;
-  text-align: center;
-}
-
-.modal-button-container{
-  height: 2rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#timer{
-	font-size:16px;
-	color: white;
-	align-items: center;
-  column-width: 0.5rem;
-}
-
-
-.modal-button-container button{
-  width: 10rem;
-  height: 2rem;
-  background: none;
-  outline: none;
-  border: 1px solid rgb(252, 242, 241);
-  color: white;
-  font-size: 1.1rem;
-  cursor: pointer;
-  border-radius: 20px;
-}
-.modal-button-container button:hover{
-  background-color: rgb(83, 82, 82);
-}
-
-
-@media(min-width : 400px) and (max-width : 750px){
-  .game-quiz-container1{
-      width: 90%;
-      height: 80vh;
-  
-@media(min-width : 300px) and (max-width : 350px){
-  .game-quiz-container{
-      width: 90%;
-      height: 80vh;
-   }
-   .game-details-container h1{
-      font-size: 0.8rem;
-   }
-
-   .game-question-container{
-      height: 6rem;
-   }
-   .game-question-container h1{
-     font-size: 0.9rem;
-  }
-
-  .game-options-container span{
-      width: 90%;
-      height: 2.5rem;
-  }
-  .game-options-container span label{
-      font-size: 0.8rem;
-  }
-  .modal-content-container{
-      width: 90%;
-      height: 25rem;
-  }
-
-  .modal-content-container h1{
-      font-size: 1.2rem;
-  }
-}
-
-@media(min-width : 350px) and (max-width : 700px){
- .game-quiz-container{
-     width: 90%;
-     height: 80vh;
-  }
-  .game-details-container h1{
-      font-size: 1rem;
-  }
-
-  .game-question-container{
-      height: 8rem;
-  }
-
-  .game-question-container h1{
-      font-size: 0.9rem;
-   }
-
-  .game-options-container span{
-      width: 90%;
-  }
-  .modal-content-container{
-      width: 90%;
-      height: 25rem;
-  }
-  .modal-content-container h1{
-      font-size: 1.2rem;
-  }
-}
-
-
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.content-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
