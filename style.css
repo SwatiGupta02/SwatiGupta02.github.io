@@ -10,6 +10,31 @@ body {
     font-family: sans-serif; /* Fallback font */
 }
 
+/* Load custom signature font */
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('./assets/BrittanySignature.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PoppinsBold';
+    src: url('./assets/PoppinsBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PoppinsMedium';
+    src: url('./assets/PoppinsMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* --- Full Screen Section Styling (Hero Image) --- */
 .full-screen-section {
     width: 100vw;
@@ -19,10 +44,10 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* Background image setup - CRUCIAL CHANGE HERE: Updated file path */
-    background-image: url('./assets/golden-fields-background.jpg'); 
+    /* Background image setup - NEW ASSET */
+    background-image: url('./assets/bg-ring-closeup.jpg'); 
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     
     position: relative;
@@ -32,34 +57,31 @@ body {
 
 /* --- Text Styling (We are getting married!) --- */
 .wedding-message {
-    /* Using Cedarville Cursive for the 'Brittany Signature' style */
-    font-family: 'Cedarville Cursive', cursive; 
-    font-size: 5rem;
+    font-family: 'BrittanySignature', 'Cedarville Cursive', cursive;
+    font-size: 10rem;
+    font-weight: 400;
     color: #ffffff;
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.7);
-    
-    /* Absolute positioning to place it precisely */
-    position: absolute;
-    top: 20%; 
-    right: 10%; 
-    
-    /* Rotate the text slightly */
-    transform: rotate(5deg); 
-    
-    text-align: right;
-    line-height: 1.2;
+    /* subtle shadow so the thin script remains delicate */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.25); /* Slightly stronger shadow for contrast */
+
+    /* Centering updates to match the design */
+    position: static; /* Remove relative positioning override */
+    margin: 0; /* Remove top-left margin */
+    max-width: 90%;
+    transform: none; /* Remove rotation */
+    text-align: center; 
+    line-height: 0.95;
     z-index: 2;
-    white-space: nowrap; 
+    white-space: normal;
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .wedding-message {
-        font-size: 2.5rem; 
-        top: 15%; 
-        right: 5%;
-        transform: rotate(3deg); 
+        font-size: 2.4rem;
+        margin: 4rem 1.5rem 0 1.5rem;
+        transform: rotate(2deg);
+        text-align: center;
     }
 }
 
@@ -72,8 +94,285 @@ body {
 
 .content-section h2 {
     font-family: sans-serif;
-    font-size: 2.5rem;
+    font-size: 4rem;
     color: #333;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
+}
+
+/* --- Split section (image + text) --- */
+.split-section {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 80px 60px;
+    background-color: #ffffff; /* CHANGED from #dceede (soft mint) to white */
+    min-height: 80vh;
+}
+
+.split-section .left {
+    flex: 1 1 50%;
+    padding: 10px 20px;
+    margin-left: 5rem
+}
+
+.headline {
+    font-family: sans-serif;
+    font-size: 20rem;
+    line-height: 0.98;
+    font-weight: 800;
+    color: #222222;
+    margin: 0 0 34px 0;
+}
+
+.rsvp-btn {
+    display: inline-block;
+    background: #1f1f1f;
+    color: #ffffff;
+    padding: 28px 146px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.split-section .right {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-card {
+    width: 85%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.image-card img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: bottom; /* NEW: Moves the focus of the image 25% up from the center */
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .split-section { flex-direction: column; padding: 40px 20px; }
+    .split-section .left { text-align: center; margin-left: 0; }
+    .headline { font-size: 2.5rem; text-align: left; }
+    .content-section h2 { font-size: 2.2rem; text-align: center; }
+    .image-card img { 
+        height: 40vh; 
+        object-position: bottom; /* Slightly less up for smaller screens if desired */
+    }
+    .rsvp-btn { padding: 14px 36px; align-items: center;}
+}
+
+/* --- Itinerary Section --- */
+.itinerary-section {
+    background: #293d3d; /* CHANGED: Dark slate green */
+    padding: 80px 20px;
+    font-family: 'PoppinsMedium';
+}
+
+.itinerary-title {
+    font-family: 'PoppinsBold';
+    font-size: 5rem;
+    color: #ffffff; /* CHANGED: White */
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.itinerary-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.itinerary-day {
+    padding: 6px 12px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itinerary-day .day-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 28px;
+    color: #9caf88; /* CHANGED: Sage green */
+}
+
+.itinerary-item {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Ensure item time is white */
+.item-time {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff; /* ADDED: Ensure white color */
+    margin-bottom: 6px;
+}
+
+/* Ensure item label is white */
+.item-label {
+    font-size: 1.4rem;
+    color: #ffffff; /* CHANGED: White */
+}
+
+/* Change divider to white */
+.divider {
+    width: 80%;
+    height: 2px;
+    background: #ffffff; /* CHANGED: White */
+    border: none;
+    margin: 20px auto;
+    opacity: 0.95;
+}
+
+/* Neutralize highlight styles since the class was removed from HTML */
+.highlight {
+    border: none;
+    padding: 6px 12px; 
+    border-radius: 0;
+}
+
+@media (max-width: 900px) {
+    .itinerary-grid { grid-template-columns: 1fr; gap: 28px; }
+    .itinerary-day { min-height: auto; }
+    .itinerary-title { font-size: 3rem; }
+    .itinerary-day .day-title { font-size: 2.2rem; }
+}
+
+/* --- Venue/Location Section Styles --- */
+
+#venue-section.split-section {
+    background-color: #fdfdf1; /* Light cream background from original itinerary */
+    min-height: 85vh; /* Ensure the image has height */
+    font-family: 'PoppinsMedium';
+}
+
+/* Center all content vertically and horizontally in the left column */
+#venue-section .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center; /* Center text within the column */
+    font-family: 'PoppinsMedium';
+}
+
+.map-icon {
+    width: 140px; /* Size for the map pin icon */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.venue-location-title {
+    /* Uses the new bold custom font */
+    font-family: 'PoppinsBold';
+    font-size: 3.5rem; 
+    line-height: 1.2;
+    font-weight: 800;
+    color: #222222;
+    margin-bottom: 30px;
+}
+
+.map-link-container {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.map-link {
+    color: #b04332; /* Warm red/brown color from the design */
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .venue-location-title {
+        font-size: 2.5rem;
+    }
+    .map-link-container {
+        font-size: 1.6rem;
+    }
+}
+
+/* --- Transport Section Styles --- */
+
+#transport-section {
+    background-color: #421d08; /* NEW: Very Dark Brown hex code provided */
+    padding: 80px 40px;
+    text-align: left; /* NEW: Align section content to the left (for title) */
+    font-family: 'PoppinsMedium';
+    color: #decea1; /* NEW: Light tan color for text */
+}
+
+.transport-title {
+    font-family: 'PoppinsBold';
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    text-align: center; 
+}
+
+.transport-grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+    align-items: anchor-center;
+}
+
+.transport-icon {
+    height: 175px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.transport-detail {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.transport-detail-sub {
+    font-size: 0.95rem;
+    color: #cccccc; /* Slightly lighter white for subsidiary text */
+}
+
+.transport-note {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #f6f6e9; /* Very light tan for notes */
+    max-width: 800px;
+    margin: 60px auto 0;
+    line-height: 1.6;
+}
+
+/* Update the existing media query at max-width: 900px */
+@media (max-width: 900px) {
+    /* ... existing styles ... */
+    
+    .transport-grid {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+        gap: 50px;
+    }
+    .transport-title {
+        font-size: 3.5rem;
+    }
 }
