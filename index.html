@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS (for interactive map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet Routing Machine CSS (for routing UI) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
 </head>
 <body>
 
@@ -144,34 +148,17 @@
         </div>
 
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15147.22896677934!2d73.49074092497645!3d18.52043028214811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc272d3f6d4d167%3A0x67a9b09a0f4a7c1d!2sGolden%20Fields%20Resort!5e0!3m2!1sen!2sin!4v1701100000000!5m2!1sen!2sin" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
+            <!-- Optional map controls (populated by map.js) -->
+            <div id="map-controls" class="map-controls" aria-hidden="false"></div>
+            <!-- Leaflet map will be initialized into this div by map.js -->
+            <div id="map"></div>
         </div>
 
         <div class="details-directions-grid">
             <div class="venue-details-column">
                 <h3 class="section-heading">Venue Details</h3>
                 <p class="detail-line">Golden Fields Resort, Mulshi</p>
-                <p class="detail-line">Wedding Pins: Venue, Forresta Resort, Konkan Kinara, Airport</p>
-                <br>
-                <h4 class="section-subheading">ADDRESS</h4>
-                <p class="detail-line">Gat No. 123, Post Kasarwadi</p>
-                <p class="detail-line">Mulshi, Pune, Maharashtra 412108</p>
-            </div>
-            <div class="directions-column">
-                <h3 class="section-heading">Directions</h3>
-                <ol class="directions-list">
-                    <li><a href="https://maps.app.goo.gl/YourGoogleMapsLink" class="direction-link">Google Maps: Golden Fields Resort</a></li>
-                    <li><a href="#" class="direction-link">Alternative Route: Via Paud Road</a></li>
-                    <li><a href="#" class="direction-link">Travel & Cab Instructions</a></li>
-                    <li><a href="#" class="direction-link">Directions from Pune Airport (PNQ)</a></li>
-                </ol>
+                <p><a href="https://maps.google.com/maps?q=Golden+Fields+Resort,+Mulshi,+Pune" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
             </div>
         </div>
     </section>
@@ -238,7 +225,27 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <!-- Leaflet Routing Machine (routing control) -->
+        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+        <!-- Provide pin data for the map (you can edit these coordinates) -->
+        <script>
+            window.MAP_PINS = [
+                    { lat: 18.538993588095252, lng: 73.58064433216347, title: 'Golden Fields', mapsUrl: 'https://maps.app.goo.gl/FXec5YFRniSbyk8x8' },
+                    { lat: 18.53778570939262, lng: 73.58187093895452, title: 'Konkan Kinara', mapsUrl: 'https://maps.app.goo.gl/jcJunYGuy6a9uobm7' },
+                    { lat: 18.53008624455986,  lng: 73.58724631011908, title: 'The Forreta', mapsUrl: 'https://maps.app.goo.gl/Z1XK5WWFSENKxZP5A' },
+                    { lat: 18.579495527729467, lng: 73.90889533895528, title: 'Pune Airport', mapsUrl: 'https://maps.app.goo.gl/5Whnixv2URQu2sESA' }
+                ];
+            // No default route (user will select two pins)
+            window.MAP_ROUTE = null;
+        </script>
+
+        <!-- Map initializer (Leaflet) -->
+        <script src="map.js"></script>
+        <!-- Existing site script -->
+        <script src="script.js"></script>
 
 </body>
 </html>
