@@ -11,10 +11,14 @@
     // default center (Golden Fields Resort area)
     const defaultCenter = [18.52043, 73.49074];
 
-    // read pins from window, or use sample
+    // read pins from window, or use sample. If you provide `window.MAP_PINS` it will
+    // override these defaults. Sample pins below include `color` so they render as
+    // colored SVG markers (red, blue, green, golden).
     const pins = Array.isArray(window.MAP_PINS) && window.MAP_PINS.length ? window.MAP_PINS : [
-      { lat: 18.52043, lng: 73.49074, title: 'Golden Fields Resort', iconUrl: 'assets/custom-pin.png' },
-      { lat: 18.52500, lng: 73.49500, title: 'Sample Hotel' }
+      { lat: 18.52043, lng: 73.49074, title: 'Golden Fields Resort', color: '#c47a2c' }, // golden
+      { lat: 18.52350, lng: 73.49320, title: 'Konkan Kinara', color: '#e74c3c' }, // red
+      { lat: 18.52500, lng: 73.49500, title: 'The Forresta', color: '#3498db' }, // blue
+      { lat: 18.52650, lng: 73.48850, title: 'Pune International Airport', color: '#2ecc71' }  // green
     ];
 
     const route = Array.isArray(window.MAP_ROUTE) && window.MAP_ROUTE.length ? window.MAP_ROUTE : null;
@@ -35,15 +39,29 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // helper to create an icon if provided
-    function createIcon(iconUrl) {
-      if (!iconUrl) return null;
-      return L.icon({
-        iconUrl: iconUrl,
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -36]
-      });
+    // helper to create an icon if provided; supports either an image URL or a simple
+    // colored SVG marker via `color` (hex or named color). Returns null when
+    // no custom icon is requested.
+    function createIcon(iconUrl, color) {
+      if (iconUrl) {
+        return L.icon({
+          iconUrl: iconUrl,
+          iconSize: [40, 40],
+          iconAnchor: [20, 40],
+          popupAnchor: [0, -36]
+        });
+      }
+      if (!color) return null;
+
+      // simple pin-shaped SVG (keeps payload small) with the requested fill color
+      const svg = `<?xml version="1.0" encoding="UTF-8"?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='28' height='40'>` +
+        `<path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z' fill='${color}'/>` +
+        `<circle cx='12' cy='9' r='2.5' fill='white' opacity='0.9'/></svg>`;
+
+      // base64-encode the SVG for use as a data URL
+      const base64 = typeof btoa === 'function' ? btoa(svg) : Buffer.from(svg).toString('base64');
+      const dataUrl = 'data:image/svg+xml;base64,' + base64;
+      return L.icon({ iconUrl: dataUrl, iconSize: [28, 40], iconAnchor: [14, 40], popupAnchor: [0, -36] });
     }
 
     // red circle icon for route start/end
@@ -61,7 +79,10 @@
       try {
         const coords = [parseFloat(p.lat), parseFloat(p.lng)];
         const opts = {};
-        if (p.iconUrl) opts.icon = createIcon(p.iconUrl);
+        // allow pins to specify either `iconUrl` (image) or `color`/`pinColor` (SVG)
+        const color = p.color || p.pinColor || null;
+        const icon = createIcon(p.iconUrl, color);
+        if (icon) opts.icon = icon;
         // popup should contain a Google Maps link labeled "Maps"
         // Prefer the explicit `p.mapsUrl` supplied in `window.MAP_PINS`.
         // If it's not present or doesn't look like a valid URL, fall back

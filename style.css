@@ -402,7 +402,6 @@ body {
 
 #venue-details-directions {
     background-color: #fcfbf5; /* Light creamy background */
-    padding: 60px 0 30px 0;
     text-align: center;
     font-family: 'PoppinsMedium', sans-serif;
     color: #4c4c4c;
@@ -411,9 +410,10 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+
 .venue-image-container {
     width: 90%;
-    margin: 0 auto 40px auto;
+    margin: 40px auto 40px auto;
     max-width: 900px; /* Limit max width for large screens */
 }
 
@@ -618,90 +618,136 @@ body {
 
 /* --- Transport Section Styles --- */
 
-#transport-section {
-    background-color: #421d08; /* NEW: Very Dark Brown hex code provided */
-    padding: 80px 40px;
-    text-align: left; /* NEW: Align section content to the left (for title) */
-    font-family: 'PoppinsMedium';
-    color: #decea1; /* NEW: Light tan color for text */
-}
-
-.transport-title {
-    font-family: 'PoppinsBold';
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 80px;
-    text-align: center; 
-}
-
-.transport-grid {
-    margin: 0 auto;
-    margin-bottom: 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+#transport-options-option2 {
+    background-color: #fdfaf5; /* Very light cream background, similar to image */
+    padding: 10px 30px;
     text-align: center;
-    align-items: anchor-center;
+    font-family: 'PoppinsMedium', sans-serif;
+    color: #4c4c4c;
 }
 
-.transport-icon {
-    height: 175px;
-    width: auto;
-    margin-bottom: 25px;
-}
-
-.transport-detail {
+#transport-options-option2 .section-title {
+    font-family: 'Dancing Script', cursive; /* Using an elegant script font for the title */
+    font-size: 3.5rem;
     font-weight: 700;
-    font-size: 1.8rem;
-    color: #ffffff;
-    line-height: 1.4;
-    margin-bottom: 5px;
+    color: #a88a6d; /* Dark gold color for the title */
+    margin-bottom: 60px;
 }
 
-.transport-detail-sub {
-    font-size: 1.4rem;
-    color: #cccccc; /* Slightly lighter white for subsidiary text */
+.transport-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
 }
 
-.transport-note {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #f6f6e9; /* Very light tan for notes */
-    max-width: 1000px;
-    margin: 60px auto 0;
-    line-height: 1.6;
+.transport-card {
+    /* Use flexible percentage widths so three cards naturally fit across.
+       `flex-basis` ~30% with a max-width prevents overflow on very large screens.
+       A `min-width` keeps cards readable on narrower viewports so they wrap when needed. */
+    flex: 1 1 30%;
+    max-width: 32%;
+    min-width: 220px;
+    background-color: #ffffff; /* White background for the card content */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+    padding: 30px;
     text-align: center;
+    position: relative;
+    border-radius: 5px; /* Slight border radius */
 }
 
-/* Update the existing media query at max-width: 900px */
+.card-border {
+    border: 1px solid #decea1; /* Gold border color from the image */
+    padding: 40px 20px; /* Internal padding for content within the border */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make sure inner content takes full height */
+}
+
+.transport-card-icon {
+    width: 100px; /* Fixed image icon size */
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    opacity: 0.85; /* Slightly faded for elegance */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-plane{
+    image-rendering: url('./assets/plane-icon.png');
+}
+
+.transport-card-title {
+    font-family: 'PoppinsBold', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #555555; /* Dark gray for title */
+    letter-spacing: 0.1em; /* Spaced out title */
+    margin-bottom: 20px;
+}
+
+.transport-card-description,
+.transport-card-contact {
+    font-family: 'PoppinsBold';
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #777777; /* Softer gray for description */
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.transport-card-contact {
+    margin-top: 15px; /* Space above contact info if present */
+    font-weight: 500;
+}
+
+
+/* Responsive Adjustments */
 @media (max-width: 900px) {
-    /* ... existing styles ... */
-    
-    .transport-grid {
-        grid-template-columns: 1fr; /* Stack columns on mobile */
-        gap: 50px;
+    .transport-cards-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center;
     }
-    .transport-title {
-        font-size: 2.5rem;
+    .transport-card {
+        /* Make cards fill the available width on mobile */
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0; /* allow the card to shrink to full width */
+        box-sizing: border-box;
     }
-    .transport-detail {
+    /* Add a little side padding to the container so cards don't touch the viewport edges */
+    .transport-cards-container { padding: 0 12px; }
+    /* Reduce inner padding so the card feels full-bleed on small screens */
+    .card-border { padding: 20px 14px; }
+    #transport-options-option2 .section-title {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+    }
+    .transport-card-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    .transport-card-title {
         font-size: 1.4rem;
     }
-    .transport-detail-sub {
+    .transport-card-description {
         font-size: 1rem;
     }
-    .transport-note {
-        max-width: 500px;
-    }
-    .transport-icon {
-        height: 120px; /* Reduce icon size on mobile */
+    .transport-card-contact {
+        font-size: 0.9rem;
     }
 }
 
 /* --- Gallery/Carousel Section Styles --- */
 
 #gallery-section {
-    background-color: #f6f6e9; /* NEW: Light cream background */
+    background-color: #fdfaf5; /* NEW: Light cream background */
     padding: 80px 0 40px 0; 
     text-align: center;
     font-family: 'BrittanySignature';
