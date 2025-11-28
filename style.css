@@ -446,6 +446,21 @@ body {
     .map-container #map { height: 360px; }
 }
 
+/* Keep map controls (From/To + Clear) on one row on small screens */
+@media (max-width: 600px) {
+    .map-controls {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .map-controls select, .map-controls button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+    .map-controls select { max-width: 125px; }
+    .map-controls button { margin-left: 8px; }
+}
+
 /* Map controls (selects + button) */
 .map-controls {
     display: flex;
@@ -517,6 +532,17 @@ body {
 }
 .leaflet-bottom.leaflet-left .map-fitall-btn { margin-left: 8px; margin-bottom: 8px; }
 
+/* Jump-to select styling (integrates with .map-controls) */
+/* jump-to control removed */
+
+/* Temporary visual highlight for a marker when jumped-to */
+.leaflet-marker-icon.marker-highlight {
+    transform: scale(1.18);
+    filter: drop-shadow(0 8px 18px rgba(66,133,244,0.28));
+    transition: transform 0.2s ease, filter 0.2s ease;
+    z-index: 9999 !important;
+}
+
 .details-directions-grid {
     display: grid;
     max-width: 800px;
@@ -532,6 +558,7 @@ body {
     font-weight: 700;
     color: #333333;
     margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 .section-subheading {
@@ -545,10 +572,16 @@ body {
 
 .detail-line {
     font-size: 1.6rem;
-    font-family: 'PoppinsBold', sans-serif;
+    font-family: 'SatisfyRegular', cursive;
     line-height: 1.6;
     color: #666666;
     margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.maps-line a {
+    font-size: 1rem;
+    margin-left: 20px;
 }
 
 .directions-list {

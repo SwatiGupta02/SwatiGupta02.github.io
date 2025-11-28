@@ -115,19 +115,24 @@
     const controlsContainer = document.getElementById('map-controls');
     if (controlsContainer) {
       // build selects
-      controlsContainer.innerHTML = '';
+      // --- Jump-to dropdown (prefers slugs) ---
+        controlsContainer.innerHTML = '';
       const fromSelect = document.createElement('select');
       const toSelect = document.createElement('select');
       fromSelect.setAttribute('aria-label', 'From');
       toSelect.setAttribute('aria-label', 'To');
 
-      // default empty option
-      const emptyOpt = document.createElement('option');
-      emptyOpt.value = '';
-      emptyOpt.textContent = 'Select...';
+      // default empty options for From / To
+      const emptyFrom = document.createElement('option');
+      emptyFrom.value = '';
+      emptyFrom.textContent = 'From...';
 
-      fromSelect.appendChild(emptyOpt.cloneNode(true));
-      toSelect.appendChild(emptyOpt.cloneNode(true));
+      const emptyTo = document.createElement('option');
+      emptyTo.value = '';
+      emptyTo.textContent = 'To...';
+
+      fromSelect.appendChild(emptyFrom);
+      toSelect.appendChild(emptyTo);
 
       pins.forEach((p, idx) => {
         const opt1 = document.createElement('option');
@@ -139,17 +144,12 @@
         toSelect.appendChild(opt2);
       });
 
-      const btn = document.createElement('button');
-      btn.textContent = 'Show Route';
-      btn.type = 'button';
-
       const clearBtn = document.createElement('button');
       clearBtn.textContent = 'Clear';
       clearBtn.type = 'button';
 
       controlsContainer.appendChild(fromSelect);
       controlsContainer.appendChild(toSelect);
-      controlsContainer.appendChild(btn);
       controlsContainer.appendChild(clearBtn);
 
       // summary element for distance/time (no directions)
@@ -162,47 +162,9 @@
       let routingControl = null;
       let routeEndMarkers = []; // store red markers for route endpoints
 
-      function clearRouting() {
-        if (routingControl) {
-          try { routingControl.remove(); } catch (e) {}
-          routingControl = null;
-        }
-        // remove red endpoint markers
-        routeEndMarkers.forEach(m => {
-          try { m.remove(); } catch (e) {}
-        });
-        routeEndMarkers = [];
-        // clear summary text
-        if (routeSummary) routeSummary.textContent = '';
-      }
-
-      // --- Fit All control (bottom-left) to bring all pins into view ---
-      const FitAllControl = L.Control.extend({
-        options: { position: 'bottomleft' },
-        onAdd: function(mapInstance) {
-          const btn = L.DomUtil.create('button', 'map-fitall-btn');
-          btn.innerHTML = 'Show All';
-          btn.title = 'Show all pins';
-          L.DomEvent.on(btn, 'click', function(e) {
-            L.DomEvent.stopPropagation(e);
-            L.DomEvent.preventDefault(e);
-            const b = markerGroup.getBounds();
-            if (b && b.isValid()) mapInstance.fitBounds(b.pad(0.2));
-          });
-          return btn;
-        }
-      });
-      map.addControl(new FitAllControl());
-
-      clearBtn.addEventListener('click', () => {
-        clearRouting();
-        fromSelect.value = '';
-        toSelect.value = '';
-      });
-
-      btn.addEventListener('click', () => {
-        const fromIdx = parseInt(fromSelect.value, 10);
-        const toIdx = parseInt(toSelect.value, 10);
+      // helper to compute and show route between two pin indices
+      function computeRoute(fromIdx, toIdx) {
+        // validate
         if (Number.isNaN(fromIdx) || Number.isNaN(toIdx) || fromIdx === toIdx) {
           if (routeSummary) routeSummary.textContent = 'Choose two different pins.';
           return;
@@ -261,7 +223,75 @@
         routingControl.on('routingerror', function(err) {
           if (routeSummary) routeSummary.textContent = 'Routing error — unable to compute route.';
         });
+      }
+
+      function clearRouting() {
+        if (routingControl) {
+          try { routingControl.remove(); } catch (e) {}
+          routingControl = null;
+        }
+        // remove red endpoint markers
+        routeEndMarkers.forEach(m => {
+          try { m.remove(); } catch (e) {}
+        });
+        routeEndMarkers = [];
+        // clear summary text
+        if (routeSummary) routeSummary.textContent = '';
+      }
+
+      // --- Fit All control (bottom-left) to bring all pins into view ---
+      const FitAllControl = L.Control.extend({
+        options: { position: 'bottomleft' },
+        onAdd: function(mapInstance) {
+          const btn = L.DomUtil.create('button', 'map-fitall-btn');
+          btn.innerHTML = 'Show All';
+          btn.title = 'Show all pins';
+          L.DomEvent.on(btn, 'click', function(e) {
+            L.DomEvent.stopPropagation(e);
+            L.DomEvent.preventDefault(e);
+            const b = markerGroup.getBounds();
+            if (b && b.isValid()) mapInstance.fitBounds(b.pad(0.2));
+          });
+          return btn;
+        }
       });
+      map.addControl(new FitAllControl());
+
+      clearBtn.addEventListener('click', () => {
+        clearRouting();
+        fromSelect.value = '';
+        toSelect.value = '';
+      });
+
+      // automatically compute route whenever both selects have a valid selection
+      function maybeComputeRoute() {
+        const fromIdx = parseInt(fromSelect.value, 10);
+        const toIdx = parseInt(toSelect.value, 10);
+        if (!Number.isNaN(fromIdx) && !Number.isNaN(toIdx) && fromIdx !== toIdx) {
+          computeRoute(fromIdx, toIdx);
+        }
+      }
+
+      fromSelect.addEventListener('change', maybeComputeRoute);
+      toSelect.addEventListener('change', maybeComputeRoute);
+
+      // On load: deep-link handling (supports #pin=slug and ?pin=slug)
+      (function handleDeepLink() {
+        try {
+          const hashMatch = (window.location.hash || '').match(/pin=([^&]+)/i);
+          const params = new URLSearchParams(window.location.search || '');
+          const q = params.get('pin');
+          const slug = hashMatch ? decodeURIComponent(hashMatch[1]) : (q ? q : null);
+          if (slug && markerMap[slug]) {
+            // small delay so map initialization finishes
+            setTimeout(() => {
+              const sel = document.getElementById('map-jump-select');
+              if (sel) sel.value = slug;
+              try { jumpToSlug(slug); } catch (e) {}
+            }, 250);
+          }
+        } catch (e) {}
+      })();
     }
   }
 
