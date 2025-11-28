@@ -847,6 +847,7 @@ body {
     background-color: #7d9b76;
     color: #f6f6e9; /* Slightly off-white from the image */
     padding: 100px 100px;
+    justify-content: space-between;
     font-family: 'PoppinsMedium';
     display: flex;
     flex-direction: column;
