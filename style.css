@@ -413,7 +413,6 @@ body {
 
 .venue-image-container {
     width: 100%;
-    max-width: 800px; /* Adjust as needed */
     margin: 0 auto 40px auto;
     padding: 0 20px;
 }
@@ -426,7 +425,7 @@ body {
 }
 
 .map-container {
-    max-width: 800px; /* Same max-width as image for alignment */
+    max-width: 900px; /* Same max-width as image for alignment */
     width: 90%;
     margin: 0 auto 50px auto;
     border-radius: 8px;
