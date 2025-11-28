@@ -60,16 +60,31 @@ body {
     justify-content: center;
     align-items: center;
 
-    /* Background image setup - NEW ASSET */
-    background-image: url('./assets/bg-ring-closeup.jpg'); 
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-        gap: 6px 4px; /* Reduce horizontal gap between icon, time, label */
+    /* Background image is handled by an inline <picture> element for responsive
+       control and better preload behavior. The picture is absolutely positioned
+       behind the content. */
+    background: none;
+    gap: 6px 4px; /* Reduce horizontal gap between icon, time, label */
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
+
+/* Hero background picture styles (the image sits behind the heading) */
+.hero-bg {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    z-index: 1;
+}
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.wedding-message { z-index: 2; }
 
 /* --- Text Styling (We are getting married!) --- */
 .wedding-message {
@@ -445,6 +460,8 @@ body {
 @media (max-width: 600px) {
     .map-container #map { height: 360px; }
 }
+
+/* hero background handled by <picture> now; no CSS background overrides required */
 
 /* Keep map controls (From/To + Clear) on one row on small screens */
 @media (max-width: 600px) {

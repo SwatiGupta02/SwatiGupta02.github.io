@@ -13,12 +13,18 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet Routing Machine CSS (for routing UI) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <!-- Preload optimized hero background (WebP) to improve LCP -->
+    <link rel="preload" as="image" href="assets/optimized/bg-ring-closeup-1600.webp" type="image/webp" fetchpriority="high">
 </head>
 <body>
 
     <section id="hero-section" class="full-screen-section">
+        <picture class="hero-bg" aria-hidden="true">
+            <source type="image/webp" srcset="assets/optimized/bg-ring-closeup-1600.webp 1600w, assets/optimized/bg-ring-closeup-800.webp 800w" sizes="100vw">
+            <img src="assets/bg-ring-closeup.jpg" alt="" class="hero-bg-img" loading="eager" decoding="async">
+        </picture>
         <h1 class="wedding-message">We are getting married!</h1>
-        </section>
+    </section>
 
     <section id="details-section" class="split-section">
         <div class="left">
@@ -29,7 +35,10 @@
         </div>
         <div class="right">
             <div class="image-card">
-                <img src="assets/couple-river-embrace.jpg" alt="Couple embracing by the river."> 
+                <picture>
+                    <source srcset="assets/optimized/couple-river-embrace-1200.webp" type="image/webp">
+                    <img src="assets/couple-river-embrace.jpg" alt="Couple embracing by the river." loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
+                </picture>
             </div>
         </div>
     </section>
@@ -50,28 +59,28 @@
             <div class="itinerary-list">
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-plates.png" alt="Lunch icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-plates.png" alt="Lunch icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">12:00 PM</div>
                     <div class="item-label">Lunch</div>
                     <div class="item-description">Fuel up for the fun ahead.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-teapot.png" alt="High tea icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-teapot.png" alt="High tea icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">4:00 PM</div>
                     <div class="item-label">High Tea</div>
                     <div class="item-description">Chai, snacks, and pre-party chatter.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-music.png" alt="Sangeet icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-music.png" alt="Sangeet icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">5:00 PM</div>
                     <div class="item-label">Sangeet</div>
                     <div class="item-description">Time to let loose – we're waiting for your performances!</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">7:00 PM</div>
                     <div class="item-label">Dinner</div>
                     <div class="item-description">Good food, good music, good company.</div>
@@ -88,35 +97,35 @@
 
             <div class="itinerary-list">
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">8:00 AM</div>
                     <div class="item-label">Breakfast</div>
                     <div class="item-description">A light, happy start to the big day.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-haldi.png" alt="Haldi icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-haldi.png" alt="Haldi icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">9:00 AM</div>
                     <div class="item-label">Haldi</div>
                     <div class="item-description">Bright, messy, and full of laughter.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-plates.png" alt="Pangat lunch icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-plates.png" alt="Pangat lunch icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">12:00 PM</div>
                     <div class="item-label">Pangat Lunch</div>
                     <div class="item-description">Enjoy the special curation of Marathi cuisine.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-wedding.png" alt="Wedding icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-wedding.png" alt="Wedding icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">4:00 PM</div>
                     <div class="item-label">Wedding</div>
                     <div class="item-description">Join us as we exchange our wedding vows.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">7:00 PM</div>
                     <div class="item-label">Dinner</div>
                     <div class="item-description">End the evening with a warm feast.</div>
@@ -133,7 +142,7 @@
 
             <div class="itinerary-list">
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon">
+                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">8:00 AM</div>
                     <div class="item-label">Breakfast</div>
                     <div class="item-description">A calm morning to wrap up the celebrations.</div>
@@ -143,8 +152,11 @@
     </section>
 
     <section id="venue-details-directions">
-        <div class="venue-image-container">
-            <img src="assets/venue-illustration.png" alt="Golden Fields Resort Illustration" class="venue-illustration">
+            <div class="venue-image-container">
+            <picture>
+                <source srcset="assets/optimized/venue-illustration-1200.webp" type="image/webp">
+                <img src="assets/venue-illustration.png" alt="Golden Fields Resort Illustration" class="venue-illustration" loading="lazy" decoding="async">
+            </picture>
         </div>
 
         <div class="map-container">
@@ -167,21 +179,21 @@
         <div class="transport-cards-container">
             <div class="transport-card">
                 <div class="card-border">
-                    <img src="assets/transport-images/icon-airport.png" alt="Airport icon" class="transport-card-icon">
+                    <img src="assets/transport-images/icon-airport.png" alt="Airport icon" class="transport-card-icon" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
                     <h3 class="transport-card-title">AIRPORT</h3>
                     <p class="transport-card-description">Pune International Airport<br>~1.5 hours from the venue</p>
                 </div>
             </div>
             <div class="transport-card">
                 <div class="card-border">
-                    <img src="assets/transport-images/icon-train.png" alt="Train icon" class="transport-card-icon">
+                    <img src="assets/transport-images/icon-train.png" alt="Train icon" class="transport-card-icon" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
                     <h3 class="transport-card-title">TRAIN</h3>
                     <p class="transport-card-description">Pune Junction<br>~1 hour from the venue</p>
                 </div>
             </div>
             <div class="transport-card">
                 <div class="card-border">
-                    <img src="assets/transport-images/icon-bus.png" alt="Bus icon" class="transport-card-icon">
+                    <img src="assets/transport-images/icon-bus.png" alt="Bus icon" class="transport-card-icon" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
                     <h3 class="transport-card-title">BUS</h3>
                     <p class="transport-card-description">Pune Shivaji Nagar/ Swargate Bus Station<br>~1 hour from the venue</p>
                 </div>

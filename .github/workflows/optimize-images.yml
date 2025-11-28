@@ -1,0 +1,32 @@
+name: Generate optimized images
+
+on:
+  push:
+    paths:
+      - 'assets/**'
+      - 'tools/**'
+  workflow_dispatch: {}
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install pillow
+
+      - name: Run optimizer
+        run: python tools/optimize_images.py
+
+      - name: Upload optimized artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets-optimized
+          path: assets/optimized

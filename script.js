@@ -10,7 +10,8 @@
   const TRACK_ID = 'carouselTrack';
   const IMAGE_PATH = 'assets/carousel-images/';
   const IMAGE_BASENAME = 'image-'; // expects image-1.jpg, image-2.jpg ...
-  const IMAGE_EXTS = ['jpg', 'jpeg', 'png', 'webp']; // try these in order when probing
+  // Prefer WebP when available, fall back to JPG/PNG
+  const IMAGE_EXTS = ['webp', 'jpg', 'jpeg', 'png']; // try these in order when probing
   const BREAKPOINT = 900; // <= this is "mobile" showing 1 slide
 
   const prevBtn = document.querySelector('.prev-btn');
@@ -107,6 +108,9 @@
     const img = document.createElement('img');
     img.className = 'carousel-image';
     img.src = src;
+    // Hint to browser: defer loading of offscreen carousel images
+    img.loading = 'lazy';
+    img.decoding = 'async';
     img.alt = `Gallery image ${i + 1}`;
 
     wrapper.appendChild(img);
