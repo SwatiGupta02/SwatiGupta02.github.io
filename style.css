@@ -593,7 +593,7 @@ body {
 
 #gallery-section {
     background-color: #f6f6e9; /* NEW: Light cream background */
-    padding: 80px 0; 
+    padding: 80px 0 40px 0; 
     text-align: center;
     font-family: 'BrittanySignature';
 }
@@ -636,8 +636,8 @@ body {
 }
 
 .carousel-image {
-    width: 450px; 
-    height: 450px; 
+    width: 400px; 
+    height: 400px; 
     object-fit: cover;
     flex-shrink: 0; 
     
@@ -649,8 +649,8 @@ body {
 .nav-btn {
     background: none;
     border: none;
-    color: #6b8a5e; /* Olive green for visibility */
-    font-size: 3rem;
+    color: #7b4a1e; /* Chocolate brown */
+    font-size: 1.8rem;
     cursor: pointer;
     padding: 10px;
     z-index: 10;
@@ -658,13 +658,14 @@ body {
     transition: opacity 0.3s;
 }
 
-.nav-btn:hover {
-    opacity: 1;
-}
-
 /* Update the existing media query at max-width: 768px */
 @media (max-width: 900px) {
     /* ... existing styles ... */
+
+    .nav-btn {
+        font-size: 10vw; /* Scale button size with viewport width */
+        padding: 3vw;
+    }
 
     .gallery-title {
         font-size: 4rem;
@@ -679,10 +680,10 @@ body {
         margin: 0 10px; /* Reduce side margins */
     }
 
-    /* NEW: Image sizing for mobile */
+    /* NEW: Image sizing for mobile — use viewport width so size is a percentage of the device screen width */
     .carousel-image {
-        width: 300px; /* Reduced width for mobile view */
-        height: 300px; /* Reduced height for mobile view */
+        width: 60vw;      /* 60% of viewport width */
+        height: 60vw;     /* keep square by matching viewport-based height */
     }
 }
 
