@@ -664,8 +664,7 @@ body {
 .venue-links a {
   font-size: 1rem;
   font-weight: 400;
-  color: #6E5F52; /* elegant soft brown-grey */
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.2s ease;
 }
 
