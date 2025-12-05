@@ -209,20 +209,64 @@
     </section>
 
     <section class="minimal-countdown">
-        <h2 class="countdown-title">TIME LEFT FOR THE BIG DAY</h2>
+        <h2 class="countdown-title">Time left for the big day!!</h2>
 
         <div class="countdown-cards">
-            <div class="count-card">
-                <span id="days">00</span>
+            <div class="time-section">
+                <div class="time-label">Days</div>
+                <div class="flip-group">
+                    <div class="count-card" id="days-hundreds-card">
+                        <span id="days-hundreds">0</span>
+                    </div>
+                    <div class="count-card">
+                        <span id="days-tens">0</span>
+                    </div>
+                    <div class="count-card">
+                        <span id="days-ones">0</span>
+                    </div>
+                </div>
             </div>
-            <div class="count-card">
-                <span id="hours">00</span>
+
+            <div class="separator">:</div>
+            
+            <div class="time-section">
+                <div class="time-label">Hours</div>
+                <div class="flip-group">
+                    <div class="count-card">
+                        <span id="hours-tens">0</span>
+                    </div>
+                    <div class="count-card">
+                        <span id="hours-ones">0</span>
+                    </div>
+                </div>
             </div>
-            <div class="count-card">
-                <span id="minutes">00</span>
+
+            <div class="separator">:</div>
+            
+            <div class="time-section">
+                <div class="time-label">Minutes</div>
+                <div class="flip-group">
+                    <div class="count-card">
+                        <span id="minutes-tens">0</span>
+                    </div>
+                    <div class="count-card">
+                        <span id="minutes-ones">0</span>
+                    </div>
+                </div>
             </div>
-            <div class="count-card">
-                <span id="seconds">00</span>
+
+            <div class="separator">:</div>
+            
+            <div class="time-section">
+                <div class="time-label">Seconds</div>
+                <div class="flip-group">
+                    <div class="count-card">
+                        <span id="seconds-tens">0</span>
+                    </div>
+                    <div class="count-card">
+                        <span id="seconds-ones">0</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
