@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +15,17 @@
     <!-- Leaflet Routing Machine CSS (for routing UI) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
     <!-- Preload optimized hero background (WebP) to improve LCP -->
-    <link rel="preload" as="image" href="assets/optimized/bg-ring-closeup-1600.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/optimized/bg-ring-closeup-1600.webp" type="image/webp"
+        fetchpriority="high">
 </head>
+
 <body>
 
     <section id="hero-section" class="full-screen-section">
         <picture class="hero-bg" aria-hidden="true">
-            <source type="image/webp" srcset="assets/optimized/bg-ring-closeup-1600.webp 1600w, assets/optimized/bg-ring-closeup-800.webp 800w" sizes="100vw">
+            <source type="image/webp"
+                srcset="assets/optimized/bg-ring-closeup-1600.webp 1600w, assets/optimized/bg-ring-closeup-800.webp 800w"
+                sizes="100vw">
             <img src="assets/bg-ring-closeup.jpg" alt="" class="hero-bg-img" loading="eager" decoding="async">
         </picture>
         <h1 class="wedding-message">We are getting married!</h1>
@@ -31,56 +36,63 @@
             <h2 class="headline">It's finally happening!!</h2>
             <h2 class="headline-sub">We can't wait to celebrate our special day with you.</h2>
             <!-- TODO: replace the placeholder invite URL with your real WhatsApp group invite -->
-            <a id="rsvp" class="rsvp-btn" href="https://chat.whatsapp.com/FJv2LLPaGRg5WWIL8lFgeo" target="_blank" rel="noopener noreferrer" aria-label="Join RSVP WhatsApp group">RSVP</a>
+            <a id="rsvp" class="rsvp-btn" href="https://chat.whatsapp.com/FJv2LLPaGRg5WWIL8lFgeo" target="_blank"
+                rel="noopener noreferrer" aria-label="Join RSVP WhatsApp group">RSVP</a>
         </div>
         <div class="right">
             <div class="image-card">
                 <picture>
                     <source srcset="assets/optimized/couple-river-embrace-1200.webp" type="image/webp">
-                    <img src="assets/couple-river-embrace.jpg" alt="Couple embracing by the river." loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
+                    <img src="assets/couple-river-embrace.jpg" alt="Couple embracing by the river." loading="lazy"
+                        decoding="async" style="width:100%;height:auto;display:block;">
                 </picture>
             </div>
         </div>
     </section>
 
-   <section id="itinerary-section" class="itinerary-bg">
+    <section id="itinerary-section" class="itinerary-bg">
         <div class="itinerary-frame">
             <h1 class="itinerary-header-script">Our Wedding Celebration</h1>
             <h2 class="itinerary-title-classic">ITINERARY</h2>
-            
+
             <div class="itinerary-divider-line">
                 <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1" fill="none"/>
+                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1"
+                        fill="none" />
                 </svg>
             </div>
-            
+
             <h3 class="itinerary-date">April 4th</h3>
 
             <div class="itinerary-list">
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-plates.png" alt="Lunch icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-plates.png" alt="Lunch icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">12:00 PM</div>
                     <div class="item-label">Lunch</div>
                     <div class="item-description">Fuel up for the fun ahead.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-teapot.png" alt="High tea icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-teapot.png" alt="High tea icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">4:00 PM</div>
                     <div class="item-label">High Tea</div>
                     <div class="item-description">Chai, snacks, and pre-party chatter.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-music.png" alt="Sangeet icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-music.png" alt="Sangeet icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">5:00 PM</div>
                     <div class="item-label">Sangeet</div>
                     <div class="item-description">Time to let loose – we're waiting for your performances!</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">7:00 PM</div>
                     <div class="item-label">Dinner</div>
                     <div class="item-description">Good food, good music, good company.</div>
@@ -89,7 +101,8 @@
 
             <div class="itinerary-divider-line">
                 <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1" fill="none"/>
+                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1"
+                        fill="none" />
                 </svg>
             </div>
 
@@ -97,35 +110,40 @@
 
             <div class="itinerary-list">
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">8:00 AM</div>
                     <div class="item-label">Breakfast</div>
                     <div class="item-description">A light, happy start to the big day.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-haldi.png" alt="Haldi icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-haldi.png" alt="Haldi icon" class="itinerary-icon" width="48"
+                        height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">9:00 AM</div>
                     <div class="item-label">Haldi</div>
                     <div class="item-description">Bright, messy, and full of laughter.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-plates.png" alt="Pangat lunch icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-plates.png" alt="Pangat lunch icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">12:00 PM</div>
                     <div class="item-label">Pangat Lunch</div>
                     <div class="item-description">Enjoy the special curation of Marathi cuisine.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-wedding.png" alt="Wedding icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-wedding.png" alt="Wedding icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">4:00 PM</div>
                     <div class="item-label">Wedding</div>
                     <div class="item-description">Join us as we exchange our wedding vows.</div>
                 </div>
 
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">7:00 PM</div>
                     <div class="item-label">Dinner</div>
                     <div class="item-description">End the evening with a warm feast.</div>
@@ -134,7 +152,8 @@
 
             <div class="itinerary-divider-line">
                 <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1" fill="none"/>
+                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1"
+                        fill="none" />
                 </svg>
             </div>
 
@@ -142,7 +161,8 @@
 
             <div class="itinerary-list">
                 <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon"
+                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
                     <div class="item-time">8:00 AM</div>
                     <div class="item-label">Breakfast</div>
                     <div class="item-description">A calm morning to wrap up the celebrations.</div>
@@ -152,10 +172,11 @@
     </section>
 
     <section id="venue-details-directions">
-            <div class="venue-image-container">
+        <div class="venue-image-container">
             <picture>
                 <source srcset="assets/optimized/venue-illustration-1200.webp" type="image/webp">
-                <img src="assets/venue-illustration.png" alt="Golden Fields Resort Illustration" class="venue-illustration" loading="lazy" decoding="async">
+                <img src="assets/venue-illustration.png" alt="Golden Fields Resort Illustration"
+                    class="venue-illustration" loading="lazy" decoding="async">
             </picture>
         </div>
 
@@ -170,44 +191,49 @@
             <div class="venue-details-column">
                 <h3 class="section-heading">Venue Details</h3>
                 <p class="detail-line">Golden Fields Resort, Mulshi</p>
-                <p class="maps-line"><a href="https://maps.google.com/maps?q=Golden+Fields+Resort,+Mulshi,+Pune" target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+                <p class="maps-line"><a href="https://maps.google.com/maps?q=Golden+Fields+Resort,+Mulshi,+Pune"
+                        target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+            </div>
+            <div class="transport-details-column">
+                <div class="venue-links">
+                    <div class="transport-item">✈️ Nearest Airport: <a href="https://maps.app.goo.gl/5Whnixv2URQu2sESA"
+                            target="_blank">Pune International Airport</a> (~1.5 hrs)</div>
+                    <div class="transport-item">🚆 Nearest Train Station: <a
+                            href="https://maps.app.goo.gl/ChTKXXwnfxDmSytL6" target="_blank">Pune Junction</a> (~1 hr)
+                    </div>
+                    <div class="transport-item">🚌 Nearest Bus Station: <a
+                            href="https://maps.app.goo.gl/T5miqvUio3D4XeZe9" target="_blank">Swargate</a> (~1 hr)</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="transport-options-option2">
-        <div class="transport-cards-container">
-            <div class="transport-card">
-                <div class="card-border">
-                    <img src="assets/transport-images/icon-airport.png" alt="Airport icon" class="transport-card-icon" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
-                    <h3 class="transport-card-title">AIRPORT</h3>
-                    <p class="transport-card-description">Pune International Airport<br>~1.5 hours from the venue</p>
-                </div>
+    <section class="minimal-countdown">
+        <h2 class="countdown-title">TIME LEFT FOR THE BIG DAY</h2>
+
+        <div class="countdown-cards">
+            <div class="count-card">
+                <span id="days">00</span>
             </div>
-            <div class="transport-card">
-                <div class="card-border">
-                    <img src="assets/transport-images/icon-train.png" alt="Train icon" class="transport-card-icon" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
-                    <h3 class="transport-card-title">TRAIN</h3>
-                    <p class="transport-card-description">Pune Junction<br>~1 hour from the venue</p>
-                </div>
+            <div class="count-card">
+                <span id="hours">00</span>
             </div>
-            <div class="transport-card">
-                <div class="card-border">
-                    <img src="assets/transport-images/icon-bus.png" alt="Bus icon" class="transport-card-icon" width="100" height="100" loading="lazy" decoding="async" fetchpriority="low">
-                    <h3 class="transport-card-title">BUS</h3>
-                    <p class="transport-card-description">Pune Shivaji Nagar/ Swargate Bus Station<br>~1 hour from the venue</p>
-                </div>
+            <div class="count-card">
+                <span id="minutes">00</span>
+            </div>
+            <div class="count-card">
+                <span id="seconds">00</span>
             </div>
         </div>
     </section>
 
     <section id="gallery-section">
         <h2 class="gallery-title">Swati & Shubankar</h2>
-        
+
         <div class="carousel-wrapper">
             <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack"> 
-                    </div>
+                <div class="carousel-track" id="carouselTrack">
+                </div>
             </div>
         </div>
     </section>
@@ -215,11 +241,10 @@
     <section id="contact-section">
         <div class="closing-message-container">
             <p class="closing-message">
-                Looking forward to your Sangeet performances and sharing this special day with all of you!
+                Looking forward to sharing this special day with all of you!
             </p>
         </div>
         <div class="contact-details">
-            <h3 class="closing-warm-regards">Warm Regards,</h3>
             <div class="contact-grid">
                 <div class="contact-column">
                     <p class="contact-person">Saroj Gupta</p>
@@ -239,27 +264,29 @@
         </div>
     </section>
 
-        <!-- Leaflet JS -->
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        <!-- Leaflet Routing Machine (routing control) -->
-        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine (routing control) -->
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
-        <!-- Provide pin data for the map (you can edit these coordinates) -->
-        <script>
-            window.MAP_PINS = [
-                    { lat: 18.538993588095252, lng: 73.58064433216347, title: 'Golden Fields', mapsUrl: 'https://maps.app.goo.gl/FXec5YFRniSbyk8x8' },
-                    { lat: 18.53778570939262, lng: 73.58187093895452, title: 'Konkan Kinara', mapsUrl: 'https://maps.app.goo.gl/jcJunYGuy6a9uobm7' },
-                    { lat: 18.53008624455986,  lng: 73.58724631011908, title: 'The Forreta', mapsUrl: 'https://maps.app.goo.gl/Z1XK5WWFSENKxZP5A' },
-                    { lat: 18.579495527729467, lng: 73.90889533895528, title: 'Pune Airport', mapsUrl: 'https://maps.app.goo.gl/5Whnixv2URQu2sESA' }
-                ];
-            // No default route (user will select two pins)
-            window.MAP_ROUTE = null;
-        </script>
+    <!-- Provide pin data for the map (you can edit these coordinates) -->
+    <script>
+        window.MAP_PINS = [
+            { lat: 18.538993588095252, lng: 73.58064433216347, title: 'Golden Fields', mapsUrl: 'https://maps.app.goo.gl/FXec5YFRniSbyk8x8' },
+            { lat: 18.53778570939262, lng: 73.58187093895452, title: 'Konkan Kinara', mapsUrl: 'https://maps.app.goo.gl/jcJunYGuy6a9uobm7' },
+            { lat: 18.53008624455986, lng: 73.58724631011908, title: 'The Forreta', mapsUrl: 'https://maps.app.goo.gl/Z1XK5WWFSENKxZP5A' },
+            { lat: 18.579495527729467, lng: 73.90889533895528, title: 'Pune Airport', mapsUrl: 'https://maps.app.goo.gl/5Whnixv2URQu2sESA' }
+        ];
+        // No default route (user will select two pins)
+        window.MAP_ROUTE = null;
+    </script>
 
-        <!-- Map initializer (Leaflet) -->
-        <script src="map.js"></script>
-        <!-- Existing site script -->
-        <script src="script.js"></script>
+    <!-- Map initializer (Leaflet) -->
+    <script src="map.js"></script>
+    <!-- Existing site script -->
+    <script src="script.js"></script>
+    <script src="countdown.js"></script>
 
 </body>
+
 </html>

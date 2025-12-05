@@ -562,11 +562,13 @@ body {
 
 .details-directions-grid {
     display: grid;
-    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
     margin: 0 auto 50px auto;
     gap: 40px;
-    padding: 0 20px;
-    text-align: left; /* Align text within columns */
+    padding-left: 40px;
+    text-align: left;
+    background-color: #fcfbf5; /* Align text within columns */
 }
 
 .section-heading {
@@ -596,9 +598,12 @@ body {
     margin-left: 20px;
 }
 
+.maps-line {
+    margin-left: 20px;
+}
+
 .maps-line a {
     font-size: 1rem;
-    margin-left: 20px;
 }
 
 .directions-list {
@@ -631,133 +636,100 @@ body {
     .map-link-container {
         font-size: 1.6rem;
     }
+    .details-directions-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        padding-left: 20px;
+    }
 }
 
 /* --- Transport Section Styles --- */
-
-#transport-options-option2 {
-    background-color: #fdfaf5; /* Very light cream background, similar to image */
-    padding: 10px 30px;
-    text-align: center;
-    font-family: 'PoppinsMedium', sans-serif;
-    color: #4c4c4c;
+#venue-transport-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-top: 3rem;
+  background-color: #fcfbf5;
 }
 
-#transport-options-option2 .section-title {
-    font-family: 'Dancing Script', cursive; /* Using an elegant script font for the title */
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #a88a6d; /* Dark gold color for the title */
-    margin-bottom: 60px;
+.venue-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-.transport-cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* Space between cards */
-    margin: 0 auto;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+.venue-links a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6E5F52; /* elegant soft brown-grey */
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.transport-card {
-    /* Use flexible percentage widths so three cards naturally fit across.
-       `flex-basis` ~30% with a max-width prevents overflow on very large screens.
-       A `min-width` keeps cards readable on narrower viewports so they wrap when needed. */
-    flex: 1 1 30%;
-    max-width: 32%;
-    min-width: 220px;
-    background-color: #ffffff; /* White background for the card content */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
-    padding: 30px;
-    text-align: center;
-    position: relative;
-    border-radius: 5px; /* Slight border radius */
+.venue-links a:hover {
+  color: #B79365; /* muted gold accent */
+  text-decoration: underline;
 }
-
-.card-border {
-    border: 1px solid #decea1; /* Gold border color from the image */
-    padding: 40px 20px; /* Internal padding for content within the border */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Make sure inner content takes full height */
-}
-
-.transport-card-icon {
-    width: 100px; /* Fixed image icon size */
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 20px;
-    opacity: 0.85; /* Slightly faded for elegance */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.icon-plane{
-    image-rendering: url('./assets/plane-icon.png');
-}
-
-.transport-card-title {
-    font-family: 'PoppinsBold', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #555555; /* Dark gray for title */
-    letter-spacing: 0.1em; /* Spaced out title */
-    margin-bottom: 20px;
-}
-
-.transport-card-description,
-.transport-card-contact {
-    font-family: 'PoppinsBold';
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #777777; /* Softer gray for description */
-    margin-bottom: 0; /* Remove default paragraph margin */
-}
-
-.transport-card-contact {
-    margin-top: 15px; /* Space above contact info if present */
-    font-weight: 500;
-}
-
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
-    .transport-cards-container {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
-        align-items: center;
+}
+
+.minimal-countdown {
+    text-align: center;
+    background-color: black
+}
+
+.countdown-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #4a4a4a;
+    margin-bottom: 2rem;
+}
+
+.countdown-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.count-card {
+    width: 110px;
+    height: 140px;
+    background: #F4F2EB; /* soft cream */
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.count-card span {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #2E2E2E;
+    font-family: 'Georgia', serif; /* vintage touch */
+}
+
+.countdown-subtitle {
+    margin-top: 1.6rem;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #6E6E6E;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .count-card {
+        width: 80px;
+        height: 100px;
     }
-    .transport-card {
-        /* Make cards fill the available width on mobile */
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0; /* allow the card to shrink to full width */
-        box-sizing: border-box;
-    }
-    /* Add a little side padding to the container so cards don't touch the viewport edges */
-    .transport-cards-container { padding: 0 12px; }
-    /* Reduce inner padding so the card feels full-bleed on small screens */
-    .card-border { padding: 20px 14px; }
-    #transport-options-option2 .section-title {
-        font-size: 2.8rem;
-        margin-bottom: 40px;
-    }
-    .transport-card-icon {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 20px;
-    }
-    .transport-card-title {
-        font-size: 1.4rem;
-    }
-    .transport-card-description {
-        font-size: 1rem;
-    }
-    .transport-card-contact {
-        font-size: 0.9rem;
+    .count-card span {
+        font-size: 3rem;
     }
 }
 
@@ -765,7 +737,7 @@ body {
 
 #gallery-section {
     background-color: #fdfaf5; /* NEW: Light cream background */
-    padding: 80px 0 40px 0; 
+    padding: 50px 0 40px 0; 
     text-align: center;
     font-family: 'BrittanySignature';
 }
@@ -839,6 +811,10 @@ body {
         padding: 3vw;
     }
 
+    .venue-links {
+        margin-top: 0rem;   
+    }
+
     .gallery-title {
         font-size: 4rem;
     }
@@ -864,8 +840,7 @@ body {
     background-color: #7d9b76;
     color: #f6f6e9; /* Slightly off-white from the image */
     padding: 100px 100px;
-    justify-content: space-between;
-    font-family: 'PoppinsMedium';
+    font-family: math;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -880,7 +855,7 @@ body {
 }
 
 .closing-message {
-    font-family: 'PoppinsBold';
+    font-family: 'BrittanySignature', cursive;
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.3;
@@ -918,7 +893,7 @@ body {
 /* Mobile adjustments for the contact section */
 @media (max-width: 768px) {
     #contact-section {
-        padding: 60px 20px;
+        padding: 60px 40px;
     }
     
     .closing-message-container {
@@ -942,6 +917,7 @@ body {
     
     .closing-warm-regards {
         text-align: left;
+        font-size: 1.0rem;
     }
 
     .contact-person {
