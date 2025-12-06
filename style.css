@@ -639,6 +639,7 @@ body {
     .details-directions-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
         padding-left: 20px;
+        gap: 20px;
     }
 }
 
@@ -661,20 +662,30 @@ body {
   margin-right: 1rem;
 }
 
-.venue-links a {
-  font-size: 1rem;
-  font-weight: 400;
-  text-decoration: underline;
-  transition: color 0.2s ease;
+.transport-item {
+    font-size: 1rem;
 }
 
-.venue-links a:hover {
+.transport-item a {
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.transport-item a:hover {
   color: #B79365; /* muted gold accent */
   text-decoration: underline;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+    .transport-item {
+        font-size: 0.8rem;
+    }
+    .transport-item a {
+        font-size: 0.8rem;
+    }
 }
 
 .minimal-countdown {
@@ -1000,8 +1011,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     text-align: left;
-    min-height: 80vh;
 }
 
 .closing-message-container {
@@ -1011,7 +1022,7 @@ body {
 }
 
 .closing-message {
-    font-family: 'BrittanySignature', cursive;
+    font-family: 'SatisfyRegular', cursive;
     font-size: 3.5rem;
     font-weight: 800;
     line-height: 1.3;
