@@ -6,6 +6,8 @@
 */
 
 (() => {
+  // Add this constant at the top of your script.js (change 66 to your actual count)
+  const TOTAL_CAROUSEL_IMAGES = 63;
   const TRACK_ID = 'carouselTrack';
   // 1. FIXED: Set the probe path to the source image directory
   const IMAGE_PROBE_PATH = 'assets/carousel-images/'; 
@@ -286,12 +288,8 @@
 
   // Wire up events and initialization
   async function init() {
-    let count = 0;
-    try {
-      count = await discoverImages();
-    } catch (e) {
-      console.warn('Error discovering images', e);
-    }
+    // 💥 REPLACED SLOW DISCOVERY WITH HARDCODED COUNT
+    const count = TOTAL_CAROUSEL_IMAGES; 
     
     visibleCount = getVisibleCount();
     buildCarouselFromCount(count);
@@ -330,7 +328,8 @@
         visibleCount = nowVisible;
         const savedIndex = currentLogicalIndex;
         
-        const newCount = await discoverImages();
+        // 💥 REPLACED SLOW DISCOVERY WITH HARDCODED COUNT
+        const newCount = TOTAL_CAROUSEL_IMAGES; 
         buildCarouselFromCount(newCount);
         
         currentLogicalIndex = savedIndex % totalSlides;
