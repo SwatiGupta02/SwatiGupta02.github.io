@@ -17,7 +17,7 @@
     const pins = Array.isArray(window.MAP_PINS) && window.MAP_PINS.length ? window.MAP_PINS : [
       { lat: 18.52043, lng: 73.49074, title: 'Golden Fields Resort', color: '#c47a2c' }, // golden
       { lat: 18.52350, lng: 73.49320, title: 'Konkan Kinara', color: '#e74c3c' }, // red
-      { lat: 18.52500, lng: 73.49500, title: 'The Forresta', color: '#3498db' }, // blue
+      { lat: 18.52500, lng: 73.49500, title: 'The Foresta', color: '#3498db' }, // blue
       { lat: 18.52650, lng: 73.48850, title: 'Pune International Airport', color: '#2ecc71' }  // green
     ];
 
