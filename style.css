@@ -737,8 +737,8 @@ body {
 
 .count-card {
     position: relative;
-    width: clamp(38px, 7.5vw, 85px);
-    height: clamp(48px, 9.4vw, 106px);
+    width: clamp(20px, 7.5vw, 85px);
+    height: clamp(30px, 9.4vw, 106px);
     background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 50%, #e8e8e8 50%, #e0e0e0 100%);
     border-radius: clamp(4px, 1vw, 8px);
     display: flex;
@@ -1099,7 +1099,7 @@ body {
 
 @media(max-width: 700px) {
     #footer-section {
-        font-size: 0.65rem;
+        font-size: 0.8rem;
         padding: 15px 8px;
     }
 }
