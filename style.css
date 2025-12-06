@@ -898,7 +898,7 @@ body {
 
 .gallery-title {
     font-family: 'BrittanySignature', 'Cedarville Cursive', cursive;
-    font-size: 8rem; 
+    font-size: 7rem; 
     color: #decea1; /* NEW: Light Gold/Muted Yellow font color */
     font-weight: 400;
     margin-bottom: 60px;
@@ -971,7 +971,7 @@ body {
     }
 
     .gallery-title {
-        font-size: 4rem;
+        font-size: 3rem;
         margin-top: 0;
     }
     
@@ -1092,6 +1092,10 @@ body {
     
 }
 
+.footer-text {
+    font-size: 1.2rem;
+}
+
 .website-link {
     color: lightblue;/* Light Gold/Muted Yellow */
     text-decoration: underline;
@@ -1101,5 +1105,8 @@ body {
     #footer-section {
         font-size: 0.8rem;
         padding: 15px 8px;
+    }
+    .footer-text {
+        font-size: 1rem;
     }
 }
