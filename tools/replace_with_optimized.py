@@ -1,77 +1,82 @@
 #!/usr/bin/env python3
 """
-Back up original images then replace heavy originals with resized, optimized versions.
-- Backups are placed under `assets/originals/` preserving relative paths.
-- Replacements use reasonable max widths and quality settings to reduce size.
+Replaces all original carousel JPG/JPEG images with their pre-optimized 
+WEBP counterparts and renames them to the final required format.
 
-This script is safe (non-destructive) because it creates backups first.
+Assumes:
+1. Original images are in 'assets/carousel-images/' (e.g., image-1.JPG).
+2. Optimized images are in 'assets/optimised/' 
+   (e.g., image-1-1600.webp).
 """
-from PIL import Image, UnidentifiedImageError
 from pathlib import Path
 import shutil
 
-# mapping: original path -> (max_width, format, save_kwargs)
-REPLACEMENTS = {
-    'assets/bg-ring-closeup.jpg': (1600, 'JPEG', {'quality': 80, 'optimize': True}),
-    'assets/couple-river-embrace.jpg': (1200, 'JPEG', {'quality': 82, 'optimize': True}),
-    'assets/venue-illustration.png': (1200, 'PNG', {'optimize': True}),
-}
+# --- Configuration ---
+START_INDEX = 1  # Start image index
+END_INDEX = 63   # End image index (based on your original list)
+SOURCE_DIR = Path('assets/optimized')
+DEST_DIR = Path('assets/carousel-images')
+BACKUP_ORIGINAL_DIR = Path('assets/originals/carousel-images')
+# ---------------------
 
-# also optimize carousel JPGs (if present)
-for i in range(1, 10):
-    p = Path(f'assets/carousel-images/image-{i}.jpg')
-    if p.exists():
-        REPLACEMENTS[str(p)] = (1600, 'JPEG', {'quality': 80, 'optimize': True})
+def backup_and_remove_original(original_path: Path):
+    """Backs up the original file and then deletes it."""
+    if original_path.exists():
+        backup_path = BACKUP_ORIGINAL_DIR / original_path.name
+        BACKUP_ORIGINAL_DIR.mkdir(parents=True, exist_ok=True)
+        
+        print(f"Backing up: {original_path.name}")
+        shutil.copy2(original_path, backup_path)
+        
+        print(f"Deleting original: {original_path.name}")
+        original_path.unlink() # Delete the file
+    else:
+        print(f"Original not found (skipping delete): {original_path.name}")
 
-OUT_BACKUP_DIR = Path('assets/originals')
-OUT_BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+def replace_and_rename_webp(i: int):
+    """Finds the optimized WEBP, renames it, and moves it to the final destination."""
+    
+    # 1. Define source and destination paths
+    source_name = f'image-{i}-1600.webp'
+    final_name = f'image-{i}.webp'
+    
+    source_path = SOURCE_DIR / source_name
+    final_path = DEST_DIR / final_name
 
-
-def backup_file(p: Path):
-    rel = p.relative_to('assets')
-    dest = OUT_BACKUP_DIR / rel
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    print(f'Backing up {p} -> {dest}')
-    shutil.copy2(p, dest)
-
-
-def replace_image(src_path, max_width, fmt, save_kwargs):
-    src = Path(src_path)
-    if not src.exists():
-        print('Skip missing:', src)
+    if not source_path.exists():
+        print(f"❌ ERROR: Optimized WEBP file not found: {source_path}")
         return
-    try:
-        backup_file(src)
-        with Image.open(src) as im:
-            orig_mode = im.mode
-            w0, h0 = im.size
-            if max_width and w0 > max_width:
-                new_h = int(max_width * h0 / w0)
-                im2 = im.resize((max_width, new_h), Image.LANCZOS)
-            else:
-                im2 = im.copy()
-            # Convert to RGB for JPEG
-            if fmt == 'JPEG' and im2.mode in ('RGBA', 'LA'):
-                bg = Image.new('RGB', im2.size, (255,255,255))
-                bg.paste(im2, mask=im2.split()[3])
-                im2 = bg
-            elif fmt == 'JPEG' and im2.mode != 'RGB':
-                im2 = im2.convert('RGB')
-            # write to a temp path then move
-            tmp = src.with_suffix(src.suffix + '.tmp')
-            im2.save(tmp, fmt, **save_kwargs)
-            tmp.replace(src)
-            print('Replaced:', src)
-    except UnidentifiedImageError:
-        print('Cannot identify image:', src)
-    except Exception as e:
-        print('ERROR processing', src, e)
 
+    # 2. Handle original file (JPG/JPEG)
+    # Check for both common extensions (JPG, jpeg, jpg)
+    original_jpg = DEST_DIR / f'image-{i}.JPG'
+    original_jpeg = DEST_DIR / f'image-{i}.jpeg'
+    
+    # Prioritize the extension that exists
+    original_path_to_delete = None
+    if original_jpg.exists():
+        original_path_to_delete = original_jpg
+    elif original_jpeg.exists():
+        original_path_to_delete = original_jpeg
+        
+    if original_path_to_delete:
+        backup_and_remove_original(original_path_to_delete)
+        
+    # 3. Move and rename the optimized WEBP file
+    try:
+        # Move the optimized file from its source to its final, renamed location
+        shutil.move(source_path, final_path)
+        print(f"✅ Success: Moved & Renamed {source_name} to {final_path}")
+    except Exception as e:
+        print(f"❌ ERROR moving {source_name}: {e}")
 
 def main():
-    for k, v in REPLACEMENTS.items():
-        replace_image(k, v[0], v[1], v[2])
-    print('Done replacements. Originals are in', OUT_BACKUP_DIR)
+    print("--- Starting Image Replacement and Renaming ---")
+    for i in range(START_INDEX, END_INDEX + 1):
+        replace_and_rename_webp(i)
+        print("---")
+    
+    print("--- Replacement Complete ---")
 
 if __name__ == '__main__':
     main()

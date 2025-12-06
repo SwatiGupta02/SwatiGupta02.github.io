@@ -22,3 +22,5 @@ replace:
 
 backup-artifacts:
 	tar -C assets -czf assets-optimized.tar.gz optimized
+
+all: optimize replace backup-artifacts
