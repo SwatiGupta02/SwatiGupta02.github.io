@@ -7,7 +7,7 @@
 
 (() => {
   // Add this constant at the top of your script.js (change 66 to your actual count)
-  const TOTAL_CAROUSEL_IMAGES = 63;
+  const TOTAL_CAROUSEL_IMAGES = 64;
   const TRACK_ID = 'carouselTrack';
   // 1. FIXED: Set the probe path to the source image directory
   const IMAGE_PROBE_PATH = 'assets/carousel-images/'; 
