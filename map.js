@@ -316,9 +316,10 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLeafletMap);
-  } else {
-    initLeafletMap();
-  }
+  // if (document.readyState === 'loading') {
+  //   document.addEventListener('DOMContentLoaded', initLeafletMap);
+  // } else {
+  //   initLeafletMap();
+  // }
+  window.initLeafletMap = initLeafletMap;
 })();

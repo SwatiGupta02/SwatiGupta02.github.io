@@ -26,304 +26,316 @@
 
 <body>
 
-    <section id="hero-section" class="full-screen-section">
-        <picture class="hero-bg" aria-hidden="true">
-            <source type="image/webp"
-                srcset="assets/optimized/bg-ring-closeup-1600.webp 1600w, assets/optimized/bg-ring-closeup-800.webp 800w"
-                sizes="100vw">
-            <img src="assets/bg-ring-closeup.jpg" alt="" class="hero-bg-img" loading="eager" decoding="async">
-        </picture>
-        <h1 class="wedding-message">We are getting married!</h1>
-    </section>
-
     <section>
-    <div id="security-overlay">
-        <div class="lock-box">
-            <h1 style="font-family: 'Dancing Script', cursive; font-size: 2.5em;">Swati & Shubhankar</h1>
-            <p>This is a private invitation. Please enter the **Guest Access Code** to view the details.</p>
-            <input type="password" id="access-code" placeholder="Enter code" aria-label="Access Code">
-            <button onclick="revealPage()">Unlock Invitation</button>
+        <div id="security-overlay">
+            <div class="lock-box">
+                <h1 style="font-family: 'Dancing Script', cursive; font-size: 2.5em;">Swati & Shubhankar</h1>
+                <p>This is a private invitation. Please enter the **Guest Access Code** to view the details.</p>
+                <input type="password" id="access-code" placeholder="Enter code" aria-label="Access Code">
+                <button onclick="revealPage()">Unlock Invitation</button>
+            </div>
         </div>
-    </div>
     </section>
 
     <div id="secure-content">
-    <section id="details-section" class="split-section">
-        <div class="left">
-            <h2 class="headline">It's finally happening!!</h2>
-            <h2 class="headline-sub">We can't wait to celebrate our special day with you.</h2>
-            <!-- TODO: replace the placeholder invite URL with your real WhatsApp group invite -->
-            <a id="rsvp" class="rsvp-btn" href="https://chat.whatsapp.com/FJv2LLPaGRg5WWIL8lFgeo" target="_blank"
-                rel="noopener noreferrer" aria-label="Join RSVP WhatsApp group">RSVP</a>
-        </div>
-        <div class="right">
-            <div class="image-card">
+
+        <section id="hero-section" class="full-screen-section">
+            <picture class="hero-bg" aria-hidden="true">
+                <source type="image/webp"
+                    srcset="assets/optimized/bg-ring-closeup-1600.webp 1600w, assets/optimized/bg-ring-closeup-800.webp 800w"
+                    sizes="100vw">
+                <img src="assets/bg-ring-closeup.jpg" alt="" class="hero-bg-img" loading="eager" decoding="async">
+            </picture>
+            <h1 class="wedding-message">We are getting married!</h1>
+        </section>
+
+        <section id="details-section" class="split-section">
+            <div class="left">
+                <h2 class="headline">It's finally happening!!</h2>
+                <h2 class="headline-sub">We can't wait to celebrate our special day with you.</h2>
+                <!-- TODO: replace the placeholder invite URL with your real WhatsApp group invite -->
+                <a id="rsvp" class="rsvp-btn" href="https://chat.whatsapp.com/FJv2LLPaGRg5WWIL8lFgeo" target="_blank"
+                    rel="noopener noreferrer" aria-label="Join RSVP WhatsApp group">RSVP</a>
+            </div>
+            <div class="right">
+                <div class="image-card">
+                    <picture>
+                        <source srcset="assets/optimized/couple-river-embrace-1200.webp" type="image/webp">
+                        <img src="assets/couple-river-embrace.jpg" alt="Couple embracing by the river." loading="lazy"
+                            decoding="async" style="width:100%;height:auto;display:block;">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerary-section" class="itinerary-bg">
+            <div class="itinerary-frame">
+                <h1 class="itinerary-header-script">Our Wedding Celebration</h1>
+                <h2 class="itinerary-title-classic">ITINERARY</h2>
+
+                <div class="itinerary-divider-line">
+                    <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c"
+                            stroke-width="1" fill="none" />
+                    </svg>
+                </div>
+
+                <h3 class="itinerary-date">April 4th</h3>
+
+                <div class="itinerary-list">
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-plates.png" alt="Lunch icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">12:00 PM</div>
+                        <div class="item-label">Lunch</div>
+                        <div class="item-description">Fuel up for the fun ahead.</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-teapot.png" alt="High tea icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">4:00 PM</div>
+                        <div class="item-label">High Tea</div>
+                        <div class="item-description">Chai, snacks, and pre-party chatter.</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-music.png" alt="Sangeet icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">5:00 PM</div>
+                        <div class="item-label">Sangeet</div>
+                        <div class="item-description">Time to let loose – we're waiting for your performances!</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">7:00 PM</div>
+                        <div class="item-label">Dinner</div>
+                        <div class="item-description">Good food, good music, good company.</div>
+                    </div>
+                </div>
+
+                <div class="itinerary-divider-line">
+                    <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c"
+                            stroke-width="1" fill="none" />
+                    </svg>
+                </div>
+
+                <h3 class="itinerary-date">April 5th</h3>
+
+                <div class="itinerary-list">
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">8:00 AM</div>
+                        <div class="item-label">Breakfast</div>
+                        <div class="item-description">A light, happy start to the big day.</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-haldi.png" alt="Haldi icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">9:00 AM</div>
+                        <div class="item-label">Haldi</div>
+                        <div class="item-description">Bright, messy, and full of laughter.</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-plates.png" alt="Pangat lunch icon"
+                            class="itinerary-icon" width="48" height="48" loading="lazy" decoding="async"
+                            fetchpriority="low">
+                        <div class="item-time">12:00 PM</div>
+                        <div class="item-label">Pangat Lunch</div>
+                        <div class="item-description">Enjoy the special curation of Marathi cuisine.</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-wedding.png" alt="Wedding icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">4:00 PM</div>
+                        <div class="item-label">Wedding</div>
+                        <div class="item-description">Join us as we exchange our wedding vows.</div>
+                    </div>
+
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">7:00 PM</div>
+                        <div class="item-label">Dinner</div>
+                        <div class="item-description">End the evening with a warm feast.</div>
+                    </div>
+                </div>
+
+                <div class="itinerary-divider-line">
+                    <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c"
+                            stroke-width="1" fill="none" />
+                    </svg>
+                </div>
+
+                <h3 class="itinerary-date">April 6th</h3>
+
+                <div class="itinerary-list">
+                    <div class="itinerary-item new-style">
+                        <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon"
+                            width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+                        <div class="item-time">8:00 AM</div>
+                        <div class="item-label">Breakfast</div>
+                        <div class="item-description">A calm morning to wrap up the celebrations.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="venue-details-directions">
+            <div class="venue-image-container">
                 <picture>
-                    <source srcset="assets/optimized/couple-river-embrace-1200.webp" type="image/webp">
-                    <img src="assets/couple-river-embrace.jpg" alt="Couple embracing by the river." loading="lazy"
-                        decoding="async" style="width:100%;height:auto;display:block;">
+                    <source srcset="assets/optimized/venue-illustration-1200.webp" type="image/webp">
+                    <img src="assets/venue-illustration.png" alt="Golden Fields Resort Illustration"
+                        class="venue-illustration" loading="lazy" decoding="async">
                 </picture>
             </div>
-        </div>
-    </section>
 
-    <section id="itinerary-section" class="itinerary-bg">
-        <div class="itinerary-frame">
-            <h1 class="itinerary-header-script">Our Wedding Celebration</h1>
-            <h2 class="itinerary-title-classic">ITINERARY</h2>
-
-            <div class="itinerary-divider-line">
-                <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1"
-                        fill="none" />
-                </svg>
+            <div class="map-container">
+                <!-- Optional map controls (populated by map.js) -->
+                <div id="map-controls" class="map-controls" aria-hidden="false"></div>
+                <!-- Leaflet map will be initialized into this div by map.js -->
+                <div id="map"></div>
             </div>
 
-            <h3 class="itinerary-date">April 4th</h3>
-
-            <div class="itinerary-list">
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-plates.png" alt="Lunch icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">12:00 PM</div>
-                    <div class="item-label">Lunch</div>
-                    <div class="item-description">Fuel up for the fun ahead.</div>
+            <div class="details-directions-grid">
+                <div class="venue-details-column">
+                    <h3 class="section-heading">Venue Details</h3>
+                    <p class="detail-line">Golden Fields Resort, Mulshi</p>
+                    <p class="maps-line"><a href="https://maps.google.com/maps?q=Golden+Fields+Resort,+Mulshi,+Pune"
+                            target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
                 </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-teapot.png" alt="High tea icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">4:00 PM</div>
-                    <div class="item-label">High Tea</div>
-                    <div class="item-description">Chai, snacks, and pre-party chatter.</div>
-                </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-music.png" alt="Sangeet icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">5:00 PM</div>
-                    <div class="item-label">Sangeet</div>
-                    <div class="item-description">Time to let loose – we're waiting for your performances!</div>
-                </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">7:00 PM</div>
-                    <div class="item-label">Dinner</div>
-                    <div class="item-description">Good food, good music, good company.</div>
-                </div>
-            </div>
-
-            <div class="itinerary-divider-line">
-                <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1"
-                        fill="none" />
-                </svg>
-            </div>
-
-            <h3 class="itinerary-date">April 5th</h3>
-
-            <div class="itinerary-list">
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">8:00 AM</div>
-                    <div class="item-label">Breakfast</div>
-                    <div class="item-description">A light, happy start to the big day.</div>
-                </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-haldi.png" alt="Haldi icon" class="itinerary-icon" width="48"
-                        height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">9:00 AM</div>
-                    <div class="item-label">Haldi</div>
-                    <div class="item-description">Bright, messy, and full of laughter.</div>
-                </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-plates.png" alt="Pangat lunch icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">12:00 PM</div>
-                    <div class="item-label">Pangat Lunch</div>
-                    <div class="item-description">Enjoy the special curation of Marathi cuisine.</div>
-                </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-wedding.png" alt="Wedding icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">4:00 PM</div>
-                    <div class="item-label">Wedding</div>
-                    <div class="item-description">Join us as we exchange our wedding vows.</div>
-                </div>
-
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-cutlery.png" alt="Dinner icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">7:00 PM</div>
-                    <div class="item-label">Dinner</div>
-                    <div class="item-description">End the evening with a warm feast.</div>
-                </div>
-            </div>
-
-            <div class="itinerary-divider-line">
-                <svg width="100%" height="10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <path d="M 0,5 L 45,5 C 50,5 50,1 55,1 C 55,5 50,5 55,5 L 100,5" stroke="#4c4c4c" stroke-width="1"
-                        fill="none" />
-                </svg>
-            </div>
-
-            <h3 class="itinerary-date">April 6th</h3>
-
-            <div class="itinerary-list">
-                <div class="itinerary-item new-style">
-                    <img src="assets/itinerary-images/icon-sun.png" alt="Breakfast icon" class="itinerary-icon"
-                        width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
-                    <div class="item-time">8:00 AM</div>
-                    <div class="item-label">Breakfast</div>
-                    <div class="item-description">A calm morning to wrap up the celebrations.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="venue-details-directions">
-        <div class="venue-image-container">
-            <picture>
-                <source srcset="assets/optimized/venue-illustration-1200.webp" type="image/webp">
-                <img src="assets/venue-illustration.png" alt="Golden Fields Resort Illustration"
-                    class="venue-illustration" loading="lazy" decoding="async">
-            </picture>
-        </div>
-
-        <div class="map-container">
-            <!-- Optional map controls (populated by map.js) -->
-            <div id="map-controls" class="map-controls" aria-hidden="false"></div>
-            <!-- Leaflet map will be initialized into this div by map.js -->
-            <div id="map"></div>
-        </div>
-
-        <div class="details-directions-grid">
-            <div class="venue-details-column">
-                <h3 class="section-heading">Venue Details</h3>
-                <p class="detail-line">Golden Fields Resort, Mulshi</p>
-                <p class="maps-line"><a href="https://maps.google.com/maps?q=Golden+Fields+Resort,+Mulshi,+Pune"
-                        target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
-            </div>
-            <div class="transport-details-column">
-                <div class="venue-links">
-                    <div class="transport-item">✈️ Nearest Airport: <a href="https://maps.app.goo.gl/5Whnixv2URQu2sESA"
-                            target="_blank">Pune International Airport</a> (~1.5 hrs)</div>
-                    <div class="transport-item">🚆 Nearest Train Station: <a
-                            href="https://maps.app.goo.gl/ChTKXXwnfxDmSytL6" target="_blank">Pune Junction</a> (~1 hr)
-                    </div>
-                    <div class="transport-item">🚌 Nearest Bus Station: <a
-                            href="https://maps.app.goo.gl/T5miqvUio3D4XeZe9" target="_blank">Swargate</a> (~1 hr)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="minimal-countdown">
-        <h2 class="countdown-title">Countdown to the big day!!</h2>
-
-        <div class="countdown-cards">
-            <div class="time-section">
-                <div class="time-label">Days</div>
-                <div class="flip-group">
-                    <div class="count-card" id="days-hundreds-card">
-                        <span id="days-hundreds">0</span>
-                    </div>
-                    <div class="count-card">
-                        <span id="days-tens">0</span>
-                    </div>
-                    <div class="count-card">
-                        <span id="days-ones">0</span>
+                <div class="transport-details-column">
+                    <div class="venue-links">
+                        <div class="transport-item">✈️ Nearest Airport: <a
+                                href="https://maps.app.goo.gl/5Whnixv2URQu2sESA" target="_blank">Pune International
+                                Airport</a> (~1.5 hrs)</div>
+                        <div class="transport-item">🚆 Nearest Train Station: <a
+                                href="https://maps.app.goo.gl/ChTKXXwnfxDmSytL6" target="_blank">Pune Junction</a> (~1
+                            hr)
+                        </div>
+                        <div class="transport-item">🚌 Nearest Bus Station: <a
+                                href="https://maps.app.goo.gl/T5miqvUio3D4XeZe9" target="_blank">Swargate</a> (~1 hr)
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="separator">:</div>
-            
-            <div class="time-section">
-                <div class="time-label">Hours</div>
-                <div class="flip-group">
-                    <div class="count-card">
-                        <span id="hours-tens">0</span>
+        <section class="minimal-countdown">
+            <h2 class="countdown-title">Countdown to the big day!!</h2>
+
+            <div class="countdown-cards">
+                <div class="time-section">
+                    <div class="time-label">Days</div>
+                    <div class="flip-group">
+                        <div class="count-card" id="days-hundreds-card">
+                            <span id="days-hundreds">0</span>
+                        </div>
+                        <div class="count-card">
+                            <span id="days-tens">0</span>
+                        </div>
+                        <div class="count-card">
+                            <span id="days-ones">0</span>
+                        </div>
                     </div>
-                    <div class="count-card">
-                        <span id="hours-ones">0</span>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-section">
+                    <div class="time-label">Hours</div>
+                    <div class="flip-group">
+                        <div class="count-card">
+                            <span id="hours-tens">0</span>
+                        </div>
+                        <div class="count-card">
+                            <span id="hours-ones">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-section">
+                    <div class="time-label">Minutes</div>
+                    <div class="flip-group">
+                        <div class="count-card">
+                            <span id="minutes-tens">0</span>
+                        </div>
+                        <div class="count-card">
+                            <span id="minutes-ones">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-section">
+                    <div class="time-label">Seconds</div>
+                    <div class="flip-group">
+                        <div class="count-card">
+                            <span id="seconds-tens">0</span>
+                        </div>
+                        <div class="count-card">
+                            <span id="seconds-ones">0</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="separator">:</div>
-            
-            <div class="time-section">
-                <div class="time-label">Minutes</div>
-                <div class="flip-group">
-                    <div class="count-card">
-                        <span id="minutes-tens">0</span>
-                    </div>
-                    <div class="count-card">
-                        <span id="minutes-ones">0</span>
+        <section id="gallery-section">
+            <h2 class="gallery-title">Swati & Shubankar</h2>
+
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="separator">:</div>
-            
-            <div class="time-section">
-                <div class="time-label">Seconds</div>
-                <div class="flip-group">
-                    <div class="count-card">
-                        <span id="seconds-tens">0</span>
+        <section id="contact-section">
+            <div class="closing-message-container">
+                <p class="closing-message">
+                    Looking forward to sharing this special day with all of you!
+                </p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-grid">
+                    <div class="contact-column">
+                        <p class="contact-person">Saroj Gupta</p>
+                        <p class="contact-person">Anurag Kumar (+91-9899575885)</p>
+                        <p class="contact-person">Poonam Gupta (+91-9868979790)</p>
+                        <p class="contact-person">Surbhi Gupta (+91-9891518885)</p>
+                        <p class="contact-person">Yash Raj Bhatia (+91-9873333148)</p>
                     </div>
-                    <div class="count-card">
-                        <span id="seconds-ones">0</span>
+                    <div class="contact-column">
+                        <p class="contact-person">Ujjwala Asolekar (+91-9820670829)</p>
+                        <p class="contact-person">Swapnagandha Kate Attal (+91-8369199902)</p>
+                        <p class="contact-person">Abhijeet Attal (+91-8308805852)</p>
+                        <p class="contact-person">Yugandhara Kate</p>
+                        <p class="contact-person">Sujay Kakarmarth</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="gallery-section">
-        <h2 class="gallery-title">Swati & Shubankar</h2>
-
-        <div class="carousel-wrapper">
-            <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="contact-details">
-            <div class="contact-grid">
-                <div class="contact-column">
-                    <p class="contact-person">Saroj Gupta</p>
-                    <p class="contact-person">Anurag Kumar (+91-9899575885)</p>
-                    <p class="contact-person">Poonam Gupta (+91-9868979790)</p>
-                    <p class="contact-person">Surbhi Gupta (+91-9891518885)</p>
-                    <p class="contact-person">Yash Raj Bhatia (+91-9873333148)</p>
-                </div>
-                <div class="contact-column">
-                    <p class="contact-person">Ujjwala Asolekar (+91-9820670829)</p>
-                    <p class="contact-person">Swapnagandha Kate Attal (+91-8369199902)</p>
-                    <p class="contact-person">Abhijeet Attal (+91-8308805852)</p>
-                    <p class="contact-person">Yugandhara Kate</p>
-                    <p class="contact-person">Sujay Kakarmarth</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="footer-section">
-        <p class="footer-text">@Created by WebDesigns By Karya</p>
-        <p>To get one for yourself: <a class="website-link" href="https://docs.google.com/forms/d/e/1FAIpQLScjMcb_m2O_j2-DBVrPkVbdWN0QIeB1ywxpDW-rgQpVhLbpdg/viewform?usp=publish-editor" target="_blank">Click here!</a></p>
-    </section>
+        <section id="footer-section">
+            <p class="footer-text">@Created by WebDesigns By Karya</p>
+            <p>To get one for yourself: <a class="website-link"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScjMcb_m2O_j2-DBVrPkVbdWN0QIeB1ywxpDW-rgQpVhLbpdg/viewform?usp=publish-editor"
+                    target="_blank">Click here!</a></p>
+        </section>
     </div>
 
     <!-- Leaflet JS -->

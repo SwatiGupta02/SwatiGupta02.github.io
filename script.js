@@ -286,44 +286,6 @@
     }
   }
 
-  function revealPage() {
-    // *** IMPORTANT: CHANGE THIS TO YOUR SECRET CODE! ***
-    const SECRET_CODE = "SWATIANDSHUBH";
-
-    const inputElement = document.getElementById('access-code');
-    const secureContentElement = document.getElementById('secure-content');
-    const overlayElement = document.getElementById('security-overlay');
-
-    // Check code (case-insensitive)
-    const enteredCode = inputElement.value.toUpperCase().trim();
-
-    if (enteredCode === SECRET_CODE) {
-      // 1. Show the main content
-      secureContentElement.style.display = 'block';
-      // 2. Hide the password prompt
-      overlayElement.style.display = 'none';
-
-      // Optional: Store a flag in session storage so they don't have to re-enter it 
-      sessionStorage.setItem('page_unlocked', 'true');
-
-    } else {
-      alert("Incorrect code. Please check your invitation card for the Guest Access Code.");
-      inputElement.value = ''; // Clear the input field
-    }
-  }
-
-  // Check on page load if the user already unlocked the page in the current session
-  document.addEventListener('DOMContentLoaded', () => {
-    const secureContentElement = document.getElementById('secure-content');
-    const overlayElement = document.getElementById('security-overlay');
-
-    if (sessionStorage.getItem('page_unlocked') === 'true') {
-      if (secureContentElement && overlayElement) {
-        secureContentElement.style.display = 'block';
-        overlayElement.style.display = 'none';
-      }
-    }
-  });
   // Wire up events and initialization
   async function init() {
     // 💥 REPLACED SLOW DISCOVERY WITH HARDCODED COUNT
@@ -384,3 +346,58 @@
 
   document.addEventListener('DOMContentLoaded', init);
 })();
+
+function revealPage() {
+    // *** IMPORTANT: CHANGE THIS TO YOUR SECRET CODE! ***
+    const SECRET_CODE = "0504";
+
+    const inputElement = document.getElementById('access-code');
+    const secureContentElement = document.getElementById('secure-content');
+    const overlayElement = document.getElementById('security-overlay');
+
+    // Check code (case-insensitive)
+    const enteredCode = inputElement.value.toUpperCase().trim();
+
+    if (enteredCode === SECRET_CODE) {
+      // 1. Show the main content
+      secureContentElement.style.display = 'block';
+      // 2. Hide the password prompt
+      overlayElement.style.display = 'none';
+
+      // 3. Store a flag in session storage
+      sessionStorage.setItem('page_unlocked', 'true');
+
+      // 4. CRITICAL FIX: Initialize Map *only* now that the container is visible
+      if (typeof window.initLeafletMap === 'function') {
+            window.initLeafletMap();
+      }
+      
+      // Optional: Trigger a resize event to ensure carousel re-measures
+      window.dispatchEvent(new Event('resize'));
+
+    } else {
+      alert("Incorrect code. Please check your invitation card for the Guest Access Code.");
+      inputElement.value = ''; // Clear the input field
+    }
+  }
+
+  // Check on page load if the user already unlocked the page in the current session
+  document.addEventListener('DOMContentLoaded', () => {
+    const secureContentElement = document.getElementById('secure-content');
+    const overlayElement = document.getElementById('security-overlay');
+
+    if (sessionStorage.getItem('page_unlocked') === 'true') {
+      if (secureContentElement && overlayElement) {
+        secureContentElement.style.display = 'block';
+        overlayElement.style.display = 'none';
+
+        // 5. CRITICAL FIX: Initialize Map when restored from session
+        if (typeof window.initLeafletMap === 'function') {
+            window.initLeafletMap();
+        }
+
+        // Optional: Trigger a resize event to ensure carousel re-measures
+        window.dispatchEvent(new Event('resize'));
+      }
+    }
+  });
