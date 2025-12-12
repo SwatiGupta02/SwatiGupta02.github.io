@@ -286,6 +286,44 @@
     }
   }
 
+  /**
+ * Reveals the contact details if the correct access code is entered.
+ * NOTE: This is client-side security (a deterrent, not fully secure).
+ */
+function revealContacts() {
+    // *** IMPORTANT: CHANGE THIS TO YOUR SECRET CODE! ***
+    const SECRET_CODE = "0504"; 
+
+    const inputElement = document.getElementById('access-code');
+    const contactsElement = document.getElementById('private-contacts');
+    const formElement = document.getElementById('security-check');
+    
+    // Convert the input to uppercase for case-insensitive matching (optional)
+    const enteredCode = inputElement.value.toUpperCase().trim();
+
+    if (enteredCode === SECRET_CODE) {
+        contactsElement.style.display = 'flex'; // Use 'flex' or 'block' depending on your contact-details display style
+        formElement.style.display = 'none'; // Hide the input form
+        // Optional: Store a flag in session storage so they don't have to re-enter it during the session
+        sessionStorage.setItem('contacts_unlocked', 'true');
+    } else {
+        alert("Incorrect code. Please try again or check your physical invitation card.");
+        inputElement.value = ''; // Clear the input field
+    }
+}
+
+// Optional: Check if the user already unlocked the contacts in the current session
+document.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem('contacts_unlocked') === 'true') {
+        const contactsElement = document.getElementById('private-contacts');
+        const formElement = document.getElementById('security-check');
+        if (contactsElement && formElement) {
+            contactsElement.style.display = 'flex'; // Use 'flex' or 'block'
+            formElement.style.display = 'none';
+        }
+    }
+});
+
   // Wire up events and initialization
   async function init() {
     // 💥 REPLACED SLOW DISCOVERY WITH HARDCODED COUNT
