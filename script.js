@@ -10,8 +10,8 @@
   const TOTAL_CAROUSEL_IMAGES = 64;
   const TRACK_ID = 'carouselTrack';
   // 1. FIXED: Set the probe path to the source image directory
-  const IMAGE_PROBE_PATH = 'assets/carousel-images/'; 
-  const IMAGE_BASENAME = 'image-'; 
+  const IMAGE_PROBE_PATH = 'assets/carousel-images/';
+  const IMAGE_BASENAME = 'image-';
   const IMAGE_EXTS = ['webp', 'jpg', 'jpeg', 'png']; // Extensions to check
 
   const BREAKPOINT = 900; // <= this is "mobile" showing 1 slide
@@ -20,14 +20,14 @@
   const nextBtn = document.querySelector('.next-btn');
   const track = document.getElementById(TRACK_ID);
   const container = document.querySelector('.carousel-container');
-  let slides = []; 
+  let slides = [];
   let totalSlides = 0;
 
   // runtime state
   let visibleCount = getVisibleCount();
-  let itemFullWidth = 0; 
-  let cloneCount = visibleCount; 
-  let currentLogicalIndex = 0; 
+  let itemFullWidth = 0;
+  let cloneCount = visibleCount;
+  let currentLogicalIndex = 0;
   let scrollDebounceTimer = null;
 
 
@@ -46,11 +46,11 @@
     let count = 0;
     let idx = 1;
     let consecutiveMisses = 0;
-    const MAX_CONSECUTIVE_MISSES = 3; 
-    
-    while (idx < 200) { 
+    const MAX_CONSECUTIVE_MISSES = 3;
+
+    while (idx < 200) {
       let found = false;
-      
+
       // Try all extensions for the current index
       for (const ext of IMAGE_EXTS) {
         const candidate = `${IMAGE_PROBE_PATH}${IMAGE_BASENAME}${idx}.${ext}`;
@@ -71,12 +71,12 @@
         break; // Stop scanning after several misses if we've found at least one image
       }
       if (!found) {
-          consecutiveMisses++;
+        consecutiveMisses++;
       }
       idx++;
     }
     // We return the total count
-    return count; 
+    return count;
   }
 
   function clearTrack() {
@@ -88,19 +88,19 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'carousel-slide';
     if (!isClone) wrapper.setAttribute('data-index', i);
-    
+
     const img = document.createElement('img');
     img.className = 'carousel-image';
-    
+
     // i is 0-based, image index is 1-based
-    const index = i + 1; 
-    
+    const index = i + 1;
+
     // Base path for source files (e.g., assets/carousel-images/image-1)
     const basePath = IMAGE_PROBE_PATH + IMAGE_BASENAME + index;
 
     // We assume .webp is the preferred format and exists, but since we don't know the exact extension,
     // we must use a fallback method for the SRC attribute. Using a dynamic approach for srcset.
-    
+
     // For SRC, we fall back to a common extension like .webp or .jpg.
     // For maximum browser compatibility (if the server is configured to resize on the fly):
     img.src = basePath + '.webp'; // Set a primary WebP source
@@ -111,27 +111,27 @@
     // Since you are ONLY picking from the source folder, this will ONLY work if:
     // a) You rename your source images to include the size suffix (e.g., image-1-1600.webp)
     // b) You use the HTML <picture> element (not img) for responsive images without suffixes.
-    
+
     // If you MUST use simple naming (image-1.webp) AND want responsive loading, 
     // you must use the <picture> tag or server-side image manipulation.
-    
+
     // Assuming you want the simplest, non-responsive load from the source directory:
     // If you are loading the full-size images, remove the srcset/sizes optimization.
-    
+
     // Since your goal is still optimization, let's use the <picture> element for proper WebP fallback:
 
     const picture = document.createElement('picture');
     // WebP source (no explicit size optimization requested with simple file names)
     const sourceWebp = document.createElement('source');
     sourceWebp.type = 'image/webp';
-    sourceWebp.srcset = basePath + '.webp'; 
+    sourceWebp.srcset = basePath + '.webp';
     picture.appendChild(sourceWebp);
 
     // Fallback image (e.g., JPG)
     img.src = basePath + '.jpg'; // Fallback to JPG/JPEG
 
     picture.appendChild(img);
-    
+
     // Hint to browser: defer loading of offscreen carousel images
     img.loading = 'lazy';
     img.decoding = 'async';
@@ -139,14 +139,14 @@
 
     // Append picture element instead of img
     wrapper.appendChild(picture);
-    
+
     return wrapper;
   }
 
   function getVisibleCount() {
     return window.innerWidth <= BREAKPOINT ? 1 : 3;
   }
-  
+
   function getTrackGap() {
     const style = getComputedStyle(track);
     return parseFloat(style.gap || style.columnGap || 0);
@@ -226,7 +226,7 @@
     clearTrack();
     slides = [];
     totalSlides = count;
-    
+
     if (totalSlides === 0) {
       const p = document.createElement('p');
       p.textContent = `No images found in ${IMAGE_PROBE_PATH}.`;
@@ -236,11 +236,11 @@
     }
 
     cloneCount = visibleCount;
-    const srcList = Array.from({ length: totalSlides }, (_, i) => i + 1); 
-    
+    const srcList = Array.from({ length: totalSlides }, (_, i) => i + 1);
+
     // Create original slides
     srcList.forEach((_, i) => {
-      const slide = createSlideElement(null, i, false); 
+      const slide = createSlideElement(null, i, false);
       slides.push(slide);
     });
 
@@ -286,49 +286,49 @@
     }
   }
 
-  /**
- * Reveals the contact details if the correct access code is entered.
- * NOTE: This is client-side security (a deterrent, not fully secure).
- */
-function revealContacts() {
+  function revealPage() {
     // *** IMPORTANT: CHANGE THIS TO YOUR SECRET CODE! ***
-    const SECRET_CODE = "0504"; 
+    const SECRET_CODE = "SWATIANDSHUBH";
 
     const inputElement = document.getElementById('access-code');
-    const contactsElement = document.getElementById('private-contacts');
-    const formElement = document.getElementById('security-check');
-    
-    // Convert the input to uppercase for case-insensitive matching (optional)
+    const secureContentElement = document.getElementById('secure-content');
+    const overlayElement = document.getElementById('security-overlay');
+
+    // Check code (case-insensitive)
     const enteredCode = inputElement.value.toUpperCase().trim();
 
     if (enteredCode === SECRET_CODE) {
-        contactsElement.style.display = 'flex'; // Use 'flex' or 'block' depending on your contact-details display style
-        formElement.style.display = 'none'; // Hide the input form
-        // Optional: Store a flag in session storage so they don't have to re-enter it during the session
-        sessionStorage.setItem('contacts_unlocked', 'true');
+      // 1. Show the main content
+      secureContentElement.style.display = 'block';
+      // 2. Hide the password prompt
+      overlayElement.style.display = 'none';
+
+      // Optional: Store a flag in session storage so they don't have to re-enter it 
+      sessionStorage.setItem('page_unlocked', 'true');
+
     } else {
-        alert("Incorrect code. Please try again or check your physical invitation card.");
-        inputElement.value = ''; // Clear the input field
+      alert("Incorrect code. Please check your invitation card for the Guest Access Code.");
+      inputElement.value = ''; // Clear the input field
     }
-}
+  }
 
-// Optional: Check if the user already unlocked the contacts in the current session
-document.addEventListener('DOMContentLoaded', () => {
-    if (sessionStorage.getItem('contacts_unlocked') === 'true') {
-        const contactsElement = document.getElementById('private-contacts');
-        const formElement = document.getElementById('security-check');
-        if (contactsElement && formElement) {
-            contactsElement.style.display = 'flex'; // Use 'flex' or 'block'
-            formElement.style.display = 'none';
-        }
+  // Check on page load if the user already unlocked the page in the current session
+  document.addEventListener('DOMContentLoaded', () => {
+    const secureContentElement = document.getElementById('secure-content');
+    const overlayElement = document.getElementById('security-overlay');
+
+    if (sessionStorage.getItem('page_unlocked') === 'true') {
+      if (secureContentElement && overlayElement) {
+        secureContentElement.style.display = 'block';
+        overlayElement.style.display = 'none';
+      }
     }
-});
-
+  });
   // Wire up events and initialization
   async function init() {
     // 💥 REPLACED SLOW DISCOVERY WITH HARDCODED COUNT
-    const count = TOTAL_CAROUSEL_IMAGES; 
-    
+    const count = TOTAL_CAROUSEL_IMAGES;
+
     visibleCount = getVisibleCount();
     buildCarouselFromCount(count);
 
@@ -365,11 +365,11 @@ document.addEventListener('DOMContentLoaded', () => {
         lastVisible = nowVisible;
         visibleCount = nowVisible;
         const savedIndex = currentLogicalIndex;
-        
+
         // 💥 REPLACED SLOW DISCOVERY WITH HARDCODED COUNT
-        const newCount = TOTAL_CAROUSEL_IMAGES; 
+        const newCount = TOTAL_CAROUSEL_IMAGES;
         buildCarouselFromCount(newCount);
-        
+
         currentLogicalIndex = savedIndex % totalSlides;
         itemFullWidth = measureItemWidth();
         setInitialScrollForIndex(currentLogicalIndex, false);
