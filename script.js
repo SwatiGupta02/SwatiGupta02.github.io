@@ -347,9 +347,39 @@
   document.addEventListener('DOMContentLoaded', init);
 })();
 
+// Function to generate the After Party HTML and inject it into the itinerary
+function injectAfterPartyEvent() {
+    const targetList = document.querySelector('#itinerary-section .itinerary-list');
+    
+    // Check if the event is already present before injecting
+    if (document.getElementById('after-party-item')) {
+        return; 
+    }
+
+    const afterPartyHTML = `
+        <div class="itinerary-item new-style" id="after-party-item">
+            <img src="assets/itinerary-images/icon-music.png" alt="After Party icon" class="itinerary-icon"
+                width="48" height="48" loading="lazy" decoding="async" fetchpriority="low">
+            <div class="item-time">11:00 PM</div>
+            <div class="item-label">After Party 🤫</div>
+            <div class="item-description">A secret with only friends to enjoy roasts, dancing and some fun!</div>
+        </div>
+    `;
+
+    // Find the itinerary list for April 4th (it's the first .itinerary-list)
+    const firstItineraryList = document.querySelector('#itinerary-section .itinerary-list');
+
+    if (firstItineraryList) {
+        // Insert the new item as the last child of the April 4th list
+        firstItineraryList.insertAdjacentHTML('beforeend', afterPartyHTML);
+    }
+}
+
+// Global function to unlock the page
 function revealPage() {
-    // *** IMPORTANT: CHANGE THIS TO YOUR SECRET CODE! ***
-    const SECRET_CODE = "0504";
+    // *** IMPORTANT: SET YOUR CODES HERE! ***
+    const NORMAL_CODE = "0504";
+    const SECRET_FRIENDS_CODE = "FRIENDS"; // <-- New secret code for friends
 
     const inputElement = document.getElementById('access-code');
     const secureContentElement = document.getElementById('secure-content');
@@ -358,46 +388,59 @@ function revealPage() {
     // Check code (case-insensitive)
     const enteredCode = inputElement.value.toUpperCase().trim();
 
-    if (enteredCode === SECRET_CODE) {
-      // 1. Show the main content
-      secureContentElement.style.display = 'block';
-      // 2. Hide the password prompt
-      overlayElement.style.display = 'none';
+    // Check if the entered code is either the normal one OR the secret one
+    if (enteredCode === NORMAL_CODE || enteredCode === SECRET_FRIENDS_CODE) {
+        // 1. Show the main content
+        secureContentElement.style.display = 'block';
+        // 2. Hide the password prompt
+        overlayElement.style.display = 'none';
 
-      // 3. Store a flag in session storage
-      sessionStorage.setItem('page_unlocked', 'true');
+        // 3. Store a flag indicating the access level
+        const accessLevel = (enteredCode === SECRET_FRIENDS_CODE) ? 'friends' : 'normal';
+        sessionStorage.setItem('page_unlocked', accessLevel);
 
-      // 4. CRITICAL FIX: Initialize Map *only* now that the container is visible
-      if (typeof window.initLeafletMap === 'function') {
+        // 4. CRITICAL: Initialize Map now that the container is visible
+        if (typeof window.initLeafletMap === 'function') {
             window.initLeafletMap();
-      }
-      
-      // Optional: Trigger a resize event to ensure carousel re-measures
-      window.dispatchEvent(new Event('resize'));
+        }
+        
+        // 5. INJECT SECRET CONTENT IF THE FRIENDS CODE WAS USED
+        if (accessLevel === 'friends') {
+            injectAfterPartyEvent();
+        }
+        
+        // Optional: Trigger a resize event (keeps the carousel stable)
+        window.dispatchEvent(new Event('resize'));
 
     } else {
       alert("Incorrect code. Please check your invitation card for the Guest Access Code.");
       inputElement.value = ''; // Clear the input field
     }
-  }
+}
 
-  // Check on page load if the user already unlocked the page in the current session
-  document.addEventListener('DOMContentLoaded', () => {
+// Check on page load if the user already unlocked the page in the current session
+document.addEventListener('DOMContentLoaded', () => {
     const secureContentElement = document.getElementById('secure-content');
     const overlayElement = document.getElementById('security-overlay');
+    const accessLevel = sessionStorage.getItem('page_unlocked');
 
-    if (sessionStorage.getItem('page_unlocked') === 'true') {
+    if (accessLevel) { // Checks if accessLevel is 'normal' or 'friends'
       if (secureContentElement && overlayElement) {
         secureContentElement.style.display = 'block';
         overlayElement.style.display = 'none';
 
-        // 5. CRITICAL FIX: Initialize Map when restored from session
+        // 6. CRITICAL: Initialize Map when restored from session
         if (typeof window.initLeafletMap === 'function') {
             window.initLeafletMap();
         }
 
-        // Optional: Trigger a resize event to ensure carousel re-measures
+        // 7. RE-INJECT SECRET CONTENT IF THE SESSION WAS FRIENDS LEVEL
+        if (accessLevel === 'friends') {
+            injectAfterPartyEvent();
+        }
+
+        // Optional: Trigger a resize event (keeps the carousel stable)
         window.dispatchEvent(new Event('resize'));
       }
     }
-  });
+});
